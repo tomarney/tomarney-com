@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1 class="title">{{ .Title }}</h1>
+<ul class="posts">
+  {{ range where (where .Site.RegularPages "Section" "posts") ".File.Ext" "md" }}
+  <li class="post">
+    <a href="{{ .Permalink }}">{{ .Title }}</a><br/>
+    <date>{{ .Date.Format "2 Jan 2006" }}</date>
+    <p>{{ .Extract }}</p>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

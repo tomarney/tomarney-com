@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ .Title }}</title>
+</head>
+
+<body>
+  <header>
+    <a class="site-logo" href="/">Home</a>
+    <nav>
+      <a href="/bio">Bio</a>
+      <a href="/blog"></a>Blog</a>
+      <a href="/contact"></a>Contact</a>
+    </nav>
+  </header>
+  {{ block "main" . }}{{ end }}
+</body>
+
+<footer>
+  <p>Thomas Arney {{ now.Format "2006"  }}.</p>
+  <p>
+    Unless otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0</abbr> license.</a>
+  </p>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+  </a>
+</footer>
+
+</html>

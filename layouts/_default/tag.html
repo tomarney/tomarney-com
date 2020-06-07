@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<ul>
+  {{ range .Pages }}
+  <li>
+    <a href="{{ .Permalink }}">
+      <date>{{ .Date.Format "2 Jan 2006" }}</date>
+      <span>{{ .Title }}</span>
+    </a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
