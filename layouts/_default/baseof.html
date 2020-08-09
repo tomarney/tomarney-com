@@ -1,33 +1,61 @@
 <!doctype html>
-<html>
+<html class="bg-near-black georgia">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  {{ $styles := resources.Get "style.scss" | toCSS  }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
   <title>{{ .Title }}</title>
 </head>
 
-<body>
-  <header>
-    <a class="site-logo" href="/">Home</a>
-    <nav>
-      <a href="/bio">Bio</a>
-      <a href="/blog"></a>Blog</a>
-      <a href="/contact"></a>Contact</a>
+<body class="bg-white">
+
+  <header class="">
+    <nav class="db w-100 border-box pa3 sans-serif bb b--black">
+      <div class="mw7 center flex flex-wrap items-center">
+        <div class="flex w-third-ns">
+          <a class="db b black f4 link dim tc tl-l" href="#" title="Home">
+            {{ .Title }}
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-between w-two-thirds-ns">
+          <a class="link dim dark-gray f6 f5-l dib pa2 pr3-l pl0" href="/bio" title="Biography">Bio</a>
+          <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/blog" title="Blog">Blog</a>
+          <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/projects" title="Past and current work">Projects</a>
+          <!-- <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/publications" title="Published work">Publications</a> -->
+          <a class="link dim dark-gray f6 f5-l dib pa2 pl3-l pr0" href="/contact" title="Contact me">Contact</a>
+        </div>
+      </div>
     </nav>
   </header>
-  {{ block "main" . }}{{ end }}
+
+  <div class="mw7 center ph3 ph0-ns">
+
+    {{ block "main" . }}{{ end }}
+
+  </div>
 </body>
 
-<footer>
-  <p>Thomas Arney {{ now.Format "2006"  }}.</p>
-  <p>
-    Unless otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0</abbr> license.</a>
-  </p>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-    <img alt="Creative Commons License" style="border-width:0"
-      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-  </a>
+<footer class="bg-near-black mt5 mt6-l ph4 pv4 sans-serif white-60">
+  <div class="cf">
+    <div class="fl w-100 w-auto-ns">
+      <a class="mh2" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0"
+          src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+      </a>
+    </div>
+    <div class="fl w-100 w-auto-ns">
+      <p>Thomas Arney {{ now.Format "2006"  }}.<br />
+        Unless otherwise noted, content on this site is licensed under a <a class="link hover-white white-80"
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"
+          title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0</abbr>
+          license.</a>
+      </p>
+    </div>
+
+  </div>
 </footer>
 
 </html>
