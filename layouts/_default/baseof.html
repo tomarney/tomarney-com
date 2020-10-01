@@ -1,10 +1,11 @@
 <!doctype html>
-<html class="bg-near-black georgia">
+<html class="bg-near-black source-serif-pro">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
   {{ $styles := resources.Get "style.scss" | toCSS  }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
   <title>{{ .Title }}</title>
@@ -13,21 +14,15 @@
 <body class="bg-white">
 
   <header class="">
-    <nav class="db w-100 border-box pa3 sans-serif bb b--black">
-      <div class="mw7 center flex flex-wrap items-center">
-        <div class="flex w-third-ns">
-          <a class="db b black f4 link dim tc tl-l" href="#" title="Home">
-            {{ .Title }}
-          </a>
-        </div>
-        <div class="flex flex-wrap justify-between w-two-thirds-ns">
-          <a class="link dim dark-gray f6 f5-l dib pa2 pr3-l pl0" href="/bio" title="Biography">Bio</a>
-          <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/blog" title="Blog">Blog</a>
-          <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/projects" title="Past and current work">Projects</a>
-          <!-- <a class="link dim dark-gray f6 f5-l dib pa2 ph3-l" href="/publications" title="Published work">Publications</a> -->
-          <a class="link dim dark-gray f6 f5-l dib pa2 pl3-l pr0" href="/contact" title="Contact me">Contact</a>
-        </div>
-      </div>
+    <nav class="flex flex-wrap items-center center mw7 pb5 pt4">
+      <a class="w-100 w-auto-ns flex-auto flex-grow-4 b black f3 tc tl-ns i pb4 pb0-ns" href="#" title="Home">
+        {{ .Title }}
+      </a>
+      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/bio" title="Biography">Bio</a>
+      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/blog" title="Blog">Blog</a>
+      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/projects" title="Past and current work">Projects</a>
+ <!-- <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/publications" title="Published work">Publications</a> -->
+      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/contact" title="Contact me">Contact</a>
     </nav>
   </header>
 
@@ -38,7 +33,7 @@
   </div>
 </body>
 
-<footer class="bg-near-black mt5 mt6-l ph4 pv4 sans-serif white-60">
+<footer class="bg-near-black mt5 mt6-l ph4 pv4 white-60">
   <div class="cf">
     <div class="fl w-100 w-auto-ns">
       <a class="mh2" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
