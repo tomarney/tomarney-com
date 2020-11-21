@@ -1,56 +1,68 @@
-<!doctype html>
-<html class="bg-near-black source-serif-pro">
+<!DOCTYPE html>
+<html class="" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
-  {{ $styles := resources.Get "style.scss" | toCSS  }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
+  <meta charset="utf-8" />
   <title>{{ .Title }}</title>
+  <!-- <meta name="description" content="" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- TODO: populate the meta tags per page
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" /> -->
+
+  <!-- TODO: Place favicon.ico in the root directory -->
+
+  <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  {{ $styles := resources.Get "style.scss" | toCSS }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
+
 </head>
 
-<body class="bg-white">
+<body>
+  <div class="container">
+    <header class="">
+      <nav class="">
+        <a class="navitem wordmark" href="/" title="Home">Tom Arney</a>
+        <a class="navitem navlink" href="/bio" title="Biography">Bio</a>
+        <a class="navitem navlink" href="/posts" title="Blog posts">Posts</a>
+        <a class="navitem navlink" href="/projects" title="Past and current work">Projects</a>
+        <!-- <a class="navitem navlink" href="/publications" title="Published work">Publications</a> -->
+        <a class="navitem navlink" href="/contact" title="Contact me">Contact</a>
+      </nav>
+    </header>
 
-  <header class="">
-    <nav class="flex flex-wrap items-center center mw7 pb5 pt4">
-      <a class="w-100 w-auto-ns flex-auto flex-grow-4 b black f3 tc tl-ns i pb4 pb0-ns" href="#" title="Home">
-        {{ .Title }}
-      </a>
-      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/bio" title="Biography">Bio</a>
-      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/blog" title="Blog">Blog</a>
-      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/projects" title="Past and current work">Projects</a>
- <!-- <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/publications" title="Published work">Publications</a> -->
-      <a class="flex-auto link black dim f4-ns f5 i tc tr-ns" href="/contact" title="Contact me">Contact</a>
-    </nav>
-  </header>
-
-  <div class="mw7 center ph3 ph0-ns">
-
-    {{ block "main" . }}{{ end }}
-
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
   </div>
+
+  <footer class="bg-near-black mt5 mt6-l ph4 pv4 white-60">
+    <div class="cf">
+      <div class="fl w-100 w-auto-ns">
+        <a class="mh2" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width: 0"
+            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+        </a>
+      </div>
+      <div class="fl w-100 w-auto-ns">
+        <p>
+          Thomas Arney {{ now.Format "2006" }}.<br />
+          Unless otherwise noted, content on this site is licensed under a
+          <a class="link hover-white white-80" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"
+            title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0
+            license.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
-
-<footer class="bg-near-black mt5 mt6-l ph4 pv4 white-60">
-  <div class="cf">
-    <div class="fl w-100 w-auto-ns">
-      <a class="mh2" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0"
-          src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-      </a>
-    </div>
-    <div class="fl w-100 w-auto-ns">
-      <p>Thomas Arney {{ now.Format "2006"  }}.<br />
-        Unless otherwise noted, content on this site is licensed under a <a class="link hover-white white-80"
-          href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"
-          title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0</abbr>
-          license.</a>
-      </p>
-    </div>
-
-  </div>
-</footer>
 
 </html>

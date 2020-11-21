@@ -1,60 +1,26 @@
 {{ define "main" }}
-Welcome to my site
-<section>
-  <h2>Latest articles</h2>
-  <ul>
-    {{ range where (where .Site.RegularPages "Section" "posts") ".File.Ext" "md" }}
-    <li class="pv4 bt bb b--black-10 ph3 ph0-l">
-      <div class="flex flex-column flex-row-ns">
-        <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-          <a href="{{ .Permalink }}" class="link hover-dark-red ">
-            <h3 class="f3 mt0 lh-title">{{ .Title }}</h3>
-          </a><br />
-          <p>{{ .Extract }}</p>
-        </div>
-        <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-          <img src="#" class="db" alt="">
-        </div>
-      </div>
-      <p class="f6 lh-copy gray mv0">By <span class="ttu">Tom Arney</span></p>
-      <time class="f6 db gray">{{ .Date.Format "2 Jan 2006" }}</time>
-    </li>
-    {{ end }}
 
-    <!-- TEMP filler -->
-    <li class="pv4 bt bb b--black-10 ph3 ph0-l">
-      <div class="flex flex-column flex-row-ns">
-        <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-          <a href="#">
-            <h3 class="f3 mt0 lh-title">We're killing the oceans</h3>
-          </a><br />
-          <p>A story about an ocean what's not doing well because we all killing it.</p>
-        </div>
-        <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-          <img src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=680" class="db" alt="The ocean">
-        </div>
-      </div>
-      <p class="f6 lh-copy gray mv0">By <span class="ttu">Tom Arney</span></p>
-      <time class="f6 db gray">2 Jan 2006</time>
-    </li>
+{{ .Content }}
 
-    <li class="pv4 bt bb b--black-10 ph3 ph0-l">
-      <div class="flex flex-column flex-row-ns">
-        <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-          <a href="#">
-            <h3 class="f3 mt0 lh-title">We're killing the atmosphere</h3>
-          </a><br />
-          <p>It's not just the oceans! Oh no! We're suffocating the atmosphere too, with too much CO<sub>2</sub>.</p>
-        </div>
-        <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-          <img src="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?w=680" class="db" alt="Some clouds">
-        </div>
-      </div>
-      <p class="f6 lh-copy gray mv0">By <span class="ttu">Tom Arney</span></p>
-      <time class="f6 db gray">2 Jan 2006</time>
-    </li>
-    <!-- END temp filler -->
 
-  </ul>
-</section>
+<ul class="unlist">
+  {{ range first 10 (where (where .Site.RegularPages "Section" "posts") ".File.Ext" "md") }}
+  <li class="">
+    <div class="">
+      <div class="">
+        <a href="{{ .Permalink }}" class="">
+          <h3 class="">{{ .Title }}</h3>
+        </a>
+        <p>{{ .Summary }}</p>
+      </div>
+      <div class="">
+        <img src="{{ .Params.MainImg.Src }}" class="" alt=" .Params.MainImg.Alt " />
+      </div>
+    </div>
+    <p class="">By <span class="">Tom Arney</span></p>
+    <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
+  </li>
+  <a href="/posts">more ></a>
+  {{ end }}
+
 {{ end }}

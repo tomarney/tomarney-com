@@ -1,14 +1,21 @@
 {{ define "main" }}
-<div class="container">
-  <h1 class="title">{{ .Title }}
-    <br>
-    <span class="subtitle">{{ .Params.Subtitle }}</span>
-  </h1>
-  <ul class="tags">
-    {{ range .Params.tags }}
-    <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> </li>
-    {{ end }}
-  </ul>
-  {{ .Content }}
-</div>
+<header>
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.Subtitle }}</p>
+</header>
+
+<figure>
+  <img src="{{ .Params.MainImg.Src }}" alt="{{ .Params.MainImg.Alt }}">
+  <figcaption>{{ .Params.MainImg.Caption }}</figcaption>
+</figure>
+
+
+{{ .Content }}
+
+<ul class="tags">
+  {{ range .Params.tags }}
+  <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> </li>
+  {{ end }}
+</ul>
+
 {{ end }}

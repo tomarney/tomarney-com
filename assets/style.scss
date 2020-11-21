@@ -1,22 +1,177 @@
+/***************
+  LAYOUT
+ ***************/
 
-.source-serif-pro {
-  font-family: 'Source Serif Pro', georgia, times, serif;
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.flex-grow-0 { flex-grow: 0; }
-.flex-grow-1 { flex-grow: 1; }
-.flex-grow-2 { flex-grow: 2; }
-.flex-grow-3 { flex-grow: 3; }
-.flex-grow-4 { flex-grow: 4; }
+img {
+  max-width: 100%;
+}
 
-body {
+figure {
+  margin: 2rem 0;
+}
 
+figcaption {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #777777;
+
+  .img-credit {
+    font-size: 0.8em;
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    float: right;
+    width: 11rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    text-align: right;
+  }
+}
+
+/***************
+  TYPOGRAPHY
+ ***************/
+
+html {
+  font-size: 21px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min(
+    Max(18px, 2.4vw),
+    22px
+  ); // CSS functions, not SCSS (CSS is case insensitive)
+  font-family: "Source Serif Pro", georgia, times, serif;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+h2 {
+  margin-top: 1.8em;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+p {
+  margin: 0.7em 0;
+}
+
+// body text width / line length
+main {
+  p,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @media (max-width: 1024px) {
+      max-width: 32rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 1024px) {
+      max-width: 36rem;
+    }
+  }
+}
+
+/***************
+  NAVBAR
+ ***************/
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid black;
+}
+
+.navitem {
+  flex: auto;
+  color: black;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  @media (min-width: 520px) {
+    width: auto;
+    text-align: right;
+  }
+
+  &:hover {
+    color: darkred;
+  }
+}
+
+.wordmark {
+  flex-grow: 4;
+  width: 100%;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: darkred;
+
+  @media (min-width: 520px) {
+    width: auto;
+    padding-bottom: 0;
+    text-align: left;
+  }
+}
+
+.navlink + .navlink {
+  padding-left: 1em;
+}
+
+/***************
+  BLOG
+ ***************/
+
+.post-info {
+  display: block;
+  margin-bottom: 2.5rem;
+  color: #777777;
+}
+
+.md {
   a {
     text-decoration: none;
 
     &:hover {
-        text-decoration: underline;
-        text-decoration-color: red;
+      text-decoration: underline;
+      text-decoration-color: red;
     }
   }
 }
