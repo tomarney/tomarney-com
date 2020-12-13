@@ -26,26 +26,37 @@
 </head>
 
 <body>
+  <div class="page">
+    <div class="container">
+      <header class="">
+        <nav class="">
+          <a class="navitem wordmark" href="/" title="Home">Tom Arney</a>
+          <a class="navitem navlink" href="/bio" title="Biography">Bio</a>
+          <a class="navitem navlink" href="/posts" title="Blog posts">Posts</a>
+          <a class="navitem navlink" href="/projects" title="Past and current work">Projects</a>
+          <!-- <a class="navitem navlink" href="/publications" title="Published work">Publications</a> -->
+          <a class="navitem navlink" href="/contact" title="Contact me">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        {{ block "main" . }}
+        {{ end }}
+      </main>
+    </div>
+
+  </div> <!-- END .page -->
+
+<div class="page">
   <div class="container">
-    <header class="">
-      <nav class="">
-        <a class="navitem wordmark" href="/" title="Home">Tom Arney</a>
-        <a class="navitem navlink" href="/bio" title="Biography">Bio</a>
-        <a class="navitem navlink" href="/posts" title="Blog posts">Posts</a>
-        <a class="navitem navlink" href="/projects" title="Past and current work">Projects</a>
-        <!-- <a class="navitem navlink" href="/publications" title="Published work">Publications</a> -->
-        <a class="navitem navlink" href="/contact" title="Contact me">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      {{ block "main" . }}
-      {{ end }}
-    </main>
+    
+    <h1>More like this:</h1>
+    <p>another article right <a href="#">here</a></p>
   </div>
+</div>
 
-  <footer class="bg-near-black mt5 mt6-l ph4 pv4 white-60">
-    <div class="cf">
+  <footer class="site-footer">
+    <div class="cf container">
       <div class="fl w-100 w-auto-ns">
         <a class="mh2" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
           <img alt="Creative Commons License" style="border-width: 0"
@@ -54,8 +65,8 @@
       </div>
       <div class="fl w-100 w-auto-ns">
         <p>
-          Thomas Arney {{ now.Format "2006" }}.<br />
-          Unless otherwise noted, content on this site is licensed under a
+          &copy; Thomas Arney {{ now.Format "2006" }}.<br />
+          Unless otherwise noted, text on this site is licensed under a
           <a class="link hover-white white-80" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"
             title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">CC-BY-NC-SA 4.0
             license.</a>
