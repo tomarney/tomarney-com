@@ -4,21 +4,21 @@
 
 <ul class="unlist">
   {{ range .Pages }}
-    <li class="">
-    <div class="">
+  <li class="">
+    <a href="{{ .Permalink }}" class="">
       <div class="">
-        <a href="{{ .Permalink }}" class="">
+        <div class="">
           <h3 class="">{{ .Title }}</h3>
-        </a>
-        <p>{{ .Summary }}</p>
+          <p>{{ .Summary }}</p>
+        </div>
+        <div class="">
+          <img src="{{ .Params.MainImg.Src }}" class="" alt=" {{ .Params.MainImg.Alt }}" />
+        </div>
       </div>
-      <div class="">
-        <img src="{{ .Params.MainImg.Src }}" class="" alt=" .Params.MainImg.Alt " />
-      </div>
-    </div>
+    </a>
     <p class="">By <span class="ttu">Tom Arney</span></p>
     <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
   </li>
   {{ end }}
 
-{{ end }}
+  {{ end }}
