@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <div class="page">
+  <div class="page-top">
     <div class="container">
       <header class="">
         <nav class="">
@@ -38,22 +38,15 @@
           <a class="navitem navlink" href="/contact" title="Contact me">Contact</a>
         </nav>
       </header>
-
-      <main>
-        {{ block "main" . }}
-        {{ end }}
-      </main>
-    </div>
-
-  </div> <!-- END .page -->
-
-<div class="page">
-  <div class="container">
-    
-    <h1>More like this:</h1>
-    <p>another article right <a href="#">here</a></p>
+    </div> <!-- END .page -->
   </div>
-</div>
+
+  <main>
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+
+
 
   <footer class="site-footer">
     <div class="cf container">

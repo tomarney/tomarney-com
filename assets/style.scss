@@ -6,20 +6,45 @@ html {
   background: #333;
 }
 
-.page {
+@mixin page-base {
   max-width: 1320px;
   margin: 0 auto;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  background: #ffe;
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  background: #fffcf5;
+  overflow: auto;
 
+  @media (min-width: 1320px) {
+    box-shadow: 0 10px 10px 1px rgba(0, 0, 0, 0.14),
+      0 14px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin page-top {
+  padding-top: 2rem;
+  
   @media (min-width: 1320px) {
     margin-top: 1rem;
     padding-top: 3rem;
   }
 }
+
+@mixin page-bottom {
+  padding-bottom: 5rem;
+}
+
+.page {
+  @include page-base;
+  @include page-top;
+  @include page-bottom;
+}
+.page-top {
+  @include page-base;
+  @include page-top;
+}
+.page-bottom {
+  @include page-base;
+  @include page-bottom;
+}
+
 
 .container {
   max-width: 48rem;
@@ -130,7 +155,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 0.5px solid black;
 }
@@ -178,7 +203,6 @@ nav {
  ***************/
 
 .site-footer {
-  background: #333;
   color: #999;
   padding-top: 60px;
   padding-bottom: 80px;
