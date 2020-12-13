@@ -1,3 +1,10 @@
+$accent-color: darkred;
+$link-color: #ffcfcc;
+$footer-color: #999;
+$page-width: 1320px;
+$bp-small: 520px;
+$bp-large: 1024px;
+
 /***************
   LAYOUT
  ***************/
@@ -6,50 +13,54 @@ html {
   background: #333;
 }
 
-@mixin page-base {
-  max-width: 1320px;
+@mixin page--base {
+  max-width: $page-width;
   margin: 0 auto;
   background: #fffcf5;
   overflow: auto;
 
-  @media (min-width: 1320px) {
+  @media (min-width: $page-width) {
     box-shadow: 0 10px 10px 1px rgba(0, 0, 0, 0.14),
       0 14px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
   }
 }
 
-@mixin page-top {
+@mixin page--top {
   padding-top: 2rem;
-  
-  @media (min-width: 1320px) {
+
+  @media (min-width: $page-width) {
     margin-top: 1rem;
     padding-top: 3rem;
   }
 }
 
-@mixin page-bottom {
+@mixin page--bottom {
   padding-bottom: 5rem;
 }
 
 .page {
-  @include page-base;
-  @include page-top;
-  @include page-bottom;
+  @include page--base;
+  @include page--top;
+  @include page--bottom;
 }
-.page-top {
-  @include page-base;
-  @include page-top;
+.page--top {
+  @include page--base;
+  @include page--top;
 }
-.page-bottom {
-  @include page-base;
-  @include page-bottom;
+.page--bottom {
+  @include page--base;
+  @include page--bottom;
 }
-
 
 .container {
   max-width: 48rem;
   margin: 0 auto;
   padding: 0 1rem;
+
+  &--wide {
+    @extend .container;
+    max-width: $page-width;
+  }
 }
 
 img {
@@ -63,19 +74,10 @@ figure {
 figcaption {
   font-size: 0.8rem;
   text-align: center;
-  color: #777777;
+  color: #666;
 
   .img-credit {
     font-size: 0.8em;
-  }
-
-  @media (min-width: 1024px) {
-    position: relative;
-    float: right;
-    width: 11rem;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    text-align: right;
   }
 }
 
@@ -90,7 +92,7 @@ html {
     22px
   ); // CSS functions, not SCSS (CSS is case insensitive)
   font-family: "Source Serif Pro", georgia, times, serif;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 h1 {
@@ -128,6 +130,31 @@ p {
   margin: 0.7em 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.redlink:hover {
+  color: $accent-color;
+}
+
+@mixin underlink($linecolor) {
+  // border-bottom: 3px solid $link-color;
+  box-shadow: inset 0 -0.4rem 0 $linecolor;
+  background-color: transparent;
+  transition: all 300ms ease;
+}
+
+.md a,
+.pinklink {
+  @include underlink($link-color);
+
+  &:hover {
+    background-color: $link-color;
+  }
+}
+
 // body text width / line length
 main {
   p,
@@ -136,12 +163,12 @@ main {
   h4,
   h5,
   h6 {
-    @media (max-width: 1024px) {
+    @media (max-width: $bp-large) {
       max-width: 32rem;
       margin-left: auto;
       margin-right: auto;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: $bp-large) {
       max-width: 36rem;
     }
   }
@@ -169,13 +196,13 @@ nav {
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  @media (min-width: 520px) {
+  @media (min-width: $bp-small) {
     width: auto;
     text-align: right;
   }
 
   &:hover {
-    color: darkred;
+    color: $accent-color;
   }
 }
 
@@ -185,9 +212,9 @@ nav {
   padding-bottom: 1rem;
   font-weight: 600;
   font-size: 1.2rem;
-  color: darkred;
+  color: $accent-color;
 
-  @media (min-width: 520px) {
+  @media (min-width: $bp-small) {
     width: auto;
     padding-bottom: 0;
     text-align: left;
@@ -203,7 +230,7 @@ nav {
  ***************/
 
 .site-footer {
-  color: #999;
+  color: $footer-color;
   padding-top: 60px;
   padding-bottom: 80px;
 }
@@ -216,17 +243,6 @@ nav {
   display: block;
   margin-bottom: 2.5rem;
   color: #777777;
-}
-
-.md {
-  a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: red;
-    }
-  }
 }
 
 /***************

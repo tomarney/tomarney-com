@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="page-bottom">
+<div class="page--bottom">
   <div class="container">
 
     <header>
@@ -13,7 +13,10 @@
       <figcaption>{{ .Params.MainImg.Caption }}</figcaption>
     </figure>
 
-    {{ .Content }}
+    <div class="md">
+      {{ .Content }}
+    </div>
+
 
   </div>
 
