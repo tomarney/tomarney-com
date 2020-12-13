@@ -155,6 +155,15 @@ a {
   }
 }
 
+.darklink {
+  @include underlink(#666);
+
+  &:hover {
+    background-color: #666;
+    color: darken($color: $footer-color, $amount: 50);
+  }
+}
+
 // body text width / line length
 main {
   p,
@@ -252,4 +261,28 @@ nav {
 .unlist {
   list-style-type: none;
   padding-left: 0;
+}
+
+/***************
+  Utilities
+ ***************/
+
+.media {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  & > :first-child {
+    padding-bottom: 1rem;
+
+    @media (min-width: $bp-small) {
+      padding-bottom: 0;
+      padding-right: 1rem;
+    }
+  }
+}
+
+.media--center {
+  align-items: center;
 }
