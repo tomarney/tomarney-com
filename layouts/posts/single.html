@@ -19,6 +19,18 @@
 
 </div>
 
+<div class="page">
+  <div class="container">
 
+    <h1>More like this:</h1>
+
+    <ul class="tags">
+      {{ range .Params.tags }}
+      <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+
+  </div>
+</div>
 
 {{ end }}

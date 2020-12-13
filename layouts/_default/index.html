@@ -1,26 +1,30 @@
 {{ define "main" }}
+<div class="page-bottom">
+  <div class="container">
 
-{{ .Content }}
+    {{ .Content }}
 
 
-<ul class="unlist">
-  {{ range first 10 (where (where .Site.RegularPages "Section" "posts") ".File.Ext" "md") }}
-  <li class="">
-    <div class="">
-      <div class="">
-        <a href="{{ .Permalink }}" class="">
-          <h3 class="">{{ .Title }}</h3>
-        </a>
-        <p>{{ .Summary }}</p>
-      </div>
-      <div class="">
-        <img src="{{ .Params.MainImg.Src }}" class="" alt=" .Params.MainImg.Alt " />
-      </div>
-    </div>
-    <p class="">By <span class="">Tom Arney</span></p>
-    <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
-  </li>
-  <a href="/posts">more ></a>
-  {{ end }}
+    <ul class="unlist">
+      {{ range first 10 (where (where .Site.RegularPages "Section" "posts") ".File.Ext" "md") }}
+      <li class="">
+        <div class="">
+          <div class="">
+            <a href="{{ .Permalink }}" class="">
+              <h3 class="">{{ .Title }}</h3>
+            </a>
+            <p>{{ .Summary }}</p>
+          </div>
+          <div class="">
+            <img src="{{ .Params.MainImg.Src }}" class="" alt=" .Params.MainImg.Alt " />
+          </div>
+        </div>
+        <p class="">By <span class="">Tom Arney</span></p>
+        <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
+      </li>
+      <a href="/posts">more ></a>
+      {{ end }}
+  </div>
+</div>
 
 {{ end }}

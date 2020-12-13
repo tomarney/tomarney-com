@@ -1,24 +1,28 @@
 {{ define "main" }}
+<div class="page-bottom">
+  <div class="container">
 
-{{ .Content }}
+    {{ .Content }}
 
-<ul class="unlist">
-  {{ range .Pages }}
-  <li class="">
-    <a href="{{ .Permalink }}" class="">
-      <div class="">
-        <div class="">
-          <h3 class="">{{ .Title }}</h3>
-          <p>{{ .Summary }}</p>
-        </div>
-        <div class="">
-          <img src="{{ .Params.MainImg.Src }}" class="" alt=" {{ .Params.MainImg.Alt }}" />
-        </div>
-      </div>
-    </a>
-    <p class="">By <span class="ttu">Tom Arney</span></p>
-    <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
-  </li>
-  {{ end }}
+    <ul class="unlist">
+      {{ range .Pages }}
+      <li class="">
+        <a href="{{ .Permalink }}" class="">
+          <div class="">
+            <div class="">
+              <h3 class="">{{ .Title }}</h3>
+              <p>{{ .Summary }}</p>
+            </div>
+            <div class="">
+              <img src="{{ .Params.MainImg.Src }}" class="" alt=" {{ .Params.MainImg.Alt }}" />
+            </div>
+          </div>
+        </a>
+        <p class="">By <span class="ttu">Tom Arney</span></p>
+        <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
+      </li>
+      {{ end }}
+  </div>
+</div>
 
-  {{ end }}
+{{ end }}
