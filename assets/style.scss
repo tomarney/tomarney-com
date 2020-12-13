@@ -144,6 +144,7 @@ a {
   box-shadow: inset 0 -0.4rem 0 $linecolor;
   background-color: transparent;
   transition: all 300ms ease;
+  transition-property: background-color;
 }
 
 .md a,
@@ -285,4 +286,15 @@ nav {
 
 .media--center {
   align-items: center;
+}
+
+.button {
+  background-color: $link-color;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+  transition: background-color 100ms ease;
+
+  &:hover, &:focus {
+    background-color: darken($color: $link-color, $amount: 10);
+  }
 }
