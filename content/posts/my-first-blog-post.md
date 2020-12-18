@@ -2,7 +2,7 @@
 title: "My first blog post"
 subtitle: "a sample of how a blog post might look"
 date: 2020-10-10T20:01:20+01:00
-draft: false
+draft: true
 mainImg: 
     Src: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732"
     Caption: "The Ocean is a big place with one *heck* of a lot of water in it."
