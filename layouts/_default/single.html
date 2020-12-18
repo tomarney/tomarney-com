@@ -5,14 +5,18 @@
 
     <header>
       <h1>{{ .Title }}</h1>
+    {{ if .Params.Subtitle }}
       <p>{{ .Params.Subtitle }}</p>
+    {{ end }}
     </header>
 
+    {{ if .Params.MainImg.Src }}
     <figure>
       <img src="{{ .Params.MainImg.Src }}" alt="{{ .Params.MainImg.Alt }}">
       <figcaption>{{ .Params.MainImg.Caption }}</figcaption>
     </figure>
-
+    {{ end }}
+    
     <div class="md">
       {{ .Content }}
     </div>

@@ -1,6 +1,6 @@
 ---
 title: "About this site"
-subtitle: "TL;DR: It's a Hugo site with a custom theme, hosted on Netlify"
+# subtitle: "TL;DR: It's a Hugo site with a custom theme, hosted on Netlify"
 date: 2020-11-21T19:15:20+00:00
 draft: false
 summary: "Interested in how I built this website?"
