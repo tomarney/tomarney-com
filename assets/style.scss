@@ -1,8 +1,9 @@
 $accent-color: darkred;
-$link-color: #ffcfcc;
+$link-color: #faddd1;
 $footer-color: #999;
 $page-width: 1320px;
 $bp-small: 520px;
+$bp-mid: 768px;
 $bp-large: 1024px;
 
 /***************
@@ -53,9 +54,13 @@ html {
 }
 
 .container {
-  max-width: 48rem;
+  max-width: 32rem;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (min-width: $bp-large) {
+    max-width: 36rem;
+  }
 
   &--wide {
     @extend .container;
@@ -87,12 +92,19 @@ figcaption {
 
 html {
   font-size: 21px; // fallback for pre-2020 browsers, IE, Opera
-  font-size: Min(
-    Max(18px, 2.4vw),
-    22px
-  ); // CSS functions, not SCSS (CSS is case insensitive)
+  font-size: Min( Max(18px, 2.4vw), 22px ); // CSS functions, not SCSS (CSS is case insensitive)
   font-family: "Source Serif Pro", georgia, times, serif;
   line-height: 1.45;
+}
+
+.small {
+  font-size: 18px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min( Max(15px, 2vw), 18px ); // CSS functions, not SCSS (CSS is case insensitive)
+}
+
+.tiny {
+  font-size: 14px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min( Max(12px, 1.6vw), 15px ); // CSS functions, not SCSS (CSS is case insensitive)
 }
 
 h1 {
@@ -127,7 +139,8 @@ h6 {
 }
 
 p {
-  margin: 0.7em 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
 }
 
 a {
@@ -141,10 +154,17 @@ a {
 
 @mixin underlink($linecolor) {
   // border-bottom: 3px solid $link-color;
-  box-shadow: inset 0 -0.4rem 0 $linecolor;
+  box-shadow: inset 0 -0.4rem $linecolor;
   background-color: transparent;
   transition: all 300ms ease;
   transition-property: background-color;
+
+  .small & {
+      box-shadow: inset 0 -0.35rem $linecolor;
+  }
+  .tiny & {
+      box-shadow: inset 0 -0.3rem $linecolor;
+  }
 }
 
 .md a,
@@ -165,24 +185,6 @@ a {
   }
 }
 
-// body text width / line length
-main {
-  p,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @media (max-width: $bp-large) {
-      max-width: 32rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (min-width: $bp-large) {
-      max-width: 36rem;
-    }
-  }
-}
 
 /***************
   NAVBAR
@@ -206,7 +208,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  @media (min-width: $bp-small) {
+  @media (min-width: $bp-mid) {
     width: auto;
     text-align: right;
   }
@@ -224,7 +226,7 @@ nav {
   font-size: 1.2rem;
   color: $accent-color;
 
-  @media (min-width: $bp-small) {
+  @media (min-width: $bp-mid) {
     width: auto;
     padding-bottom: 0;
     text-align: left;
@@ -243,6 +245,10 @@ nav {
   color: $footer-color;
   padding-top: 60px;
   padding-bottom: 80px;
+}
+
+.copyright-notice {
+  padding-top: 40px;
 }
 
 /***************
@@ -297,4 +303,42 @@ nav {
   &:hover, &:focus {
     background-color: darken($color: $link-color, $amount: 10);
   }
+}
+
+.pv--0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ph--0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.pa--0 {
+  padding: 0 !important;
+}
+
+.mv--0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.mh--0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.ma--0 {
+  margin: 0 !important;
+}
+
+.w--1-2 {
+  min-width: 50%;
+}
+.w--1-3 {
+  min-width: 33.33%;
+}
+.w--2-3 {
+  min-width: 66.66%;
 }
