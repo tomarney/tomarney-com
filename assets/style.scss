@@ -158,7 +158,7 @@ p {
   LINKS
  ***************/
 
-a {
+a:not(.wordmark) {
   text-decoration: none;
   color: inherit;
 
