@@ -1,11 +1,11 @@
-$accent-color: darkred;
-$text-color--dark: #999;
-$accent-color--dark: #bbb;
-$link-color: #faddd1;
-$page-color: #fffdfa;
-$page-width: 1000px;
+$accent-color:      #800020;
+$bg-color:          #fffdfa;
+$bg-color--alt:     scale-color($accent-color, $lightness: -50%);
+$text-color--alt:   scale-color($bg-color, $lightness: -10%);
+$accent-color--alt: #fff;
+
 $bp-small: 520px;
-$bp-mid: 768px;
+$bp-mid:   768px;
 $bp-large: 1024px;
 
 /***************
@@ -13,46 +13,11 @@ $bp-large: 1024px;
  ***************/
 
 html {
-  background: #333;
+  background: $bg-color--alt;
 }
 
-@mixin page--base {
-  max-width: $page-width;
-  margin: 0 auto;
-  background: $page-color;
-  overflow: auto;
-
-  @media (min-width: $page-width) {
-    box-shadow: 0 10px 10px 1px rgba(0, 0, 0, 0.14),
-      0 14px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  }
-}
-
-@mixin page--top {
-  padding-top: 2rem;
-
-  @media (min-width: $page-width) {
-    margin-top: 1rem;
-    padding-top: 3rem;
-  }
-}
-
-@mixin page--bottom {
-  padding-bottom: 5rem;
-}
-
-.page {
-  @include page--base;
-  @include page--top;
-  @include page--bottom;
-}
-.page--top {
-  @include page--base;
-  @include page--top;
-}
-.page--bottom {
-  @include page--base;
-  @include page--bottom;
+body {
+  background-color: $bg-color;
 }
 
 .container {
@@ -66,7 +31,7 @@ html {
 
   &--wide {
     @extend .container;
-    max-width: $page-width;
+    max-width: 42rem;
   }
 }
 
@@ -158,7 +123,7 @@ p {
   LINKS
  ***************/
 
-a:not(.wordmark) {
+a {
   text-decoration: none;
   color: inherit;
 
@@ -177,7 +142,7 @@ a:not(.wordmark) {
 .impliedlink--dark {
   :hover,
   &:focus {
-    color: $accent-color--dark;
+    color: $accent-color--alt;
   }
 }
 
@@ -194,9 +159,8 @@ a:not(.wordmark) {
 
 .link--dark {
   @extend .link;
-  color: $accent-color--dark;
+  color: $accent-color--alt;
 }
-
 
 @mixin manicule {
   content: "\261e";
@@ -242,7 +206,8 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   border-bottom: 0.5px solid black;
 }
@@ -277,6 +242,10 @@ nav {
   font-size: 1.2rem;
   color: $accent-color;
 
+  &:hover, &:focus {
+    -webkit-text-stroke: 0;
+  }
+
   @media (min-width: $bp-mid) {
     width: auto;
     padding-bottom: 0;
@@ -289,9 +258,11 @@ nav {
  ***************/
 
 .site-footer {
-  color: $text-color--dark;
+  background: $bg-color--alt;
+  color: $text-color--alt;
   padding-top: 60px;
   padding-bottom: 80px;
+  margin-top: 6rem;
 }
 
 .copyright-notice {
