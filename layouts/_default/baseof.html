@@ -19,8 +19,9 @@
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
-  {{ $styles := resources.Get "css/style.scss" | toCSS }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
+  {{ $css := resources.Get "css/style.scss" | toCSS }}
+  {{ $style := $css | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" />
 
 </head>
 
