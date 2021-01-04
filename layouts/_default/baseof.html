@@ -14,13 +14,12 @@
 
   <!-- TODO: Place favicon.ico in the root directory -->
 
-  <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
-  {{ $styles := resources.Get "style.scss" | toCSS }}
+  {{ $styles := resources.Get "css/style.scss" | toCSS }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" />
 
 </head>

@@ -1,0 +1,27 @@
+
+/***************
+  COLOURS
+ ***************/
+
+$accent-color:      #800020;
+$bg-color:          #fffdfa;
+$bg-color--alt:     scale-color($accent-color, $lightness: -50%);
+$text-color--alt:   scale-color($bg-color, $lightness: -10%);
+$accent-color--alt: #fff;
+
+
+/***************
+  BREAKPOINTS
+ ***************/
+
+$bp-small: 520px;
+$bp-mid:   768px;
+$bp-large: 1024px;
+
+
+
+@import "modules/layout",
+        "modules/typography",
+        "modules/nav",
+        "modules/footer",
+        "modules/utils";

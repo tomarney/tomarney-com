@@ -1,0 +1,144 @@
+/***************
+  TYPOGRAPHY
+ ***************/
+
+html {
+  font-size: 21px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min(
+    Max(18px, 2.4vw),
+    22px
+  ); // CSS functions, not SCSS (CSS is case insensitive)
+  font-family: "Source Serif Pro", georgia, times, serif;
+  line-height: 1.45;
+}
+
+.small {
+  font-size: 18px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min(
+    Max(15px, 2vw),
+    18px
+  ); // CSS functions, not SCSS (CSS is case insensitive)
+}
+
+.tiny {
+  font-size: 14px; // fallback for pre-2020 browsers, IE, Opera
+  font-size: Min(
+    Max(12px, 1.6vw),
+    15px
+  ); // CSS functions, not SCSS (CSS is case insensitive)
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+h2 {
+  margin-top: 1.8em;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+p {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+/***************
+  LINKS
+ ***************/
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    -webkit-text-stroke: 0.02em;
+  }
+}
+
+.impliedlink {
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.impliedlink--dark {
+  :hover,
+  &:focus {
+    color: $accent-color--alt;
+  }
+}
+
+.md a,
+.link {
+  color: $accent-color;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    -webkit-text-stroke: 0.02em;
+  }
+}
+
+.link--dark {
+  @extend .link;
+  color: $accent-color--alt;
+}
+
+@mixin manicule {
+  content: "\261e";
+  font-size: 1.75em;
+  font-weight: 100;
+  -webkit-text-stroke: 0;
+  line-height: 0;
+  position: relative;
+  bottom: -0.125em;
+}
+
+.point-right-out {
+  &::after {
+    @include manicule;
+    padding-left: 0.2em;
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      content: "\261b";
+    }
+  }
+}
+
+.point-right-in {
+  &::before {
+    @include manicule;
+    padding-right: 0.2em;
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      content: "\261b";
+    }
+  }
+}

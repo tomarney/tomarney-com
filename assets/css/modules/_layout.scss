@@ -1,0 +1,50 @@
+/***************
+  LAYOUT
+ ***************/
+
+html {
+  background: $bg-color--alt;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+.container {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: $bp-large) {
+    max-width: 36rem;
+  }
+
+  &--wide {
+    @extend .container;
+    max-width: 42rem;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #666;
+
+  .img-credit {
+    font-size: 0.8em;
+  }
+}
+
+ .post-info {
+  display: block;
+  margin-bottom: 2.5rem;
+  color: #777777;
+}
