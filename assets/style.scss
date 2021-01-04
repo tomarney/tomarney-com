@@ -1,6 +1,8 @@
 $accent-color: darkred;
+$text-color--dark: #999;
+$accent-color--dark: #bbb;
 $link-color: #faddd1;
-$footer-color: #999;
+$page-color: #fffdfa;
 $page-width: 1000px;
 $bp-small: 520px;
 $bp-mid: 768px;
@@ -17,7 +19,7 @@ html {
 @mixin page--base {
   max-width: $page-width;
   margin: 0 auto;
-  background: #fffcf5;
+  background: $page-color;
   overflow: auto;
 
   @media (min-width: $page-width) {
@@ -146,43 +148,32 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+
+  &:hover {
+    -webkit-text-stroke: 0.02em;
+  }
 }
 
-.redlink:hover {
+.impliedlink:hover {
   color: $accent-color;
 }
-
-@mixin underlink($linecolor) {
-  // border-bottom: 3px solid $link-color;
-  box-shadow: inset 0 -0.4rem $linecolor;
-  background-color: transparent;
-  transition: all 300ms ease;
-  transition-property: background-color;
-
-  .small & {
-      box-shadow: inset 0 -0.3rem $linecolor;
-  }
-  .tiny & {
-      box-shadow: inset 0 -0.25rem $linecolor;
-  }
+.impliedlink--dark:hover {
+  color: $accent-color--dark;
 }
 
 .md a,
-.pinklink {
-  @include underlink($link-color);
+.link {
+  color: $accent-color;
+  font-weight: 600;
 
   &:hover {
-    background-color: $link-color;
+    -webkit-text-stroke: 0.02em;
   }
 }
 
-.darklink {
-  @include underlink(#666);
-
-  &:hover {
-    background-color: #666;
-    color: darken($color: $footer-color, $amount: 50);
-  }
+.link--dark {
+  @extend .link;
+  color: $accent-color--dark;
 }
 
 
@@ -213,9 +204,9 @@ nav {
     text-align: right;
   }
 
-  &:hover {
-    color: $accent-color;
-  }
+  // &:hover {
+  //   color: $accent-color;
+  // }
 }
 
 .wordmark {
@@ -242,7 +233,7 @@ nav {
  ***************/
 
 .site-footer {
-  color: $footer-color;
+  color: $text-color--dark;
   padding-top: 60px;
   padding-bottom: 80px;
 }
