@@ -1,38 +1,36 @@
 {{ define "main" }}
-<div class="page--bottom">
-  <div class="container">
+<div class="container">
 
-    <header>
-      <h1>{{ .Title }}</h1>
-    {{ if .Params.Subtitle }}
-      <p>{{ .Params.Subtitle }}</p>
-    {{ end }}
-    </header>
+  <header>
+    <h1>{{ .Title }}</h1>
+  {{ if .Params.Subtitle }}
+    <p>{{ .Params.Subtitle }}</p>
+  {{ end }}
+  </header>
 
-    <div class="md">
-      {{ .Content }}
-    </div>
-
-
-    <ul class="unlist">
-      {{ range .Pages }}
-      <li class="">
-        <a href="{{ .Permalink }}" class="">
-          <div class="">
-            <div class="">
-              <h3 class="">{{ .Title }}</h3>
-              <p>{{ .Summary }}</p>
-            </div>
-            <div class="">
-              <img src="{{ .Params.MainImg.Src }}" class="" alt=" {{ .Params.MainImg.Alt }}" />
-            </div>
-          </div>
-        </a>
-        <p class="">By <span class="ttu">Tom Arney</span></p>
-        <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
-      </li>
-      {{ end }}
+  <div class="md">
+    {{ .Content }}
   </div>
+
+
+  <ul class="unlist">
+    {{ range .Pages }}
+    <li class="">
+      <a href="{{ .Permalink }}" class="">
+        <div class="">
+          <div class="">
+            <h3 class="">{{ .Title }}</h3>
+            <p>{{ .Summary }}</p>
+          </div>
+          <div class="">
+            <img src="{{ .Params.MainImg.Src }}" class="" alt=" {{ .Params.MainImg.Alt }}" />
+          </div>
+        </div>
+      </a>
+      <p class="">By <span class="ttu">Tom Arney</span></p>
+      <time class="">{{ .Date.Format "2 Jan 2006" }}</time>
+    </li>
+    {{ end }}
 </div>
 
 {{ end }}
