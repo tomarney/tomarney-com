@@ -154,6 +154,10 @@ p {
   margin-bottom: 0.7em;
 }
 
+/***************
+  LINKS
+ ***************/
+
 a {
   text-decoration: none;
   color: inherit;
@@ -191,6 +195,43 @@ a {
 .link--dark {
   @extend .link;
   color: $accent-color--dark;
+}
+
+
+@mixin manicule {
+  content: "\261e";
+  font-size: 1.75em;
+  font-weight: 100;
+  -webkit-text-stroke: 0;
+  line-height: 0;
+  position: relative;
+  bottom: -0.125em;
+}
+
+.point-right-out {
+  &::after {
+    @include manicule;
+    padding-left: 0.2em;
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      content: "\261b";
+    }
+  }
+}
+
+.point-right-in {
+  &::before {
+    @include manicule;
+    padding-right: 0.2em;
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      content: "\261b";
+    }
+  }
 }
 
 /***************
@@ -298,18 +339,6 @@ nav {
 
 .media--center {
   align-items: center;
-}
-
-.button {
-  background-color: $link-color;
-  padding-right: 0.2rem;
-  padding-left: 0.2rem;
-  transition: background-color 100ms ease;
-
-  &:hover,
-  &:focus {
-    background-color: darken($color: $link-color, $amount: 10);
-  }
 }
 
 .pv--0 {
