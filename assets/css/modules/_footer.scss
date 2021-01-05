@@ -4,12 +4,24 @@
 
  .site-footer {
   background: $bg-color--alt;
-  color: $text-color--alt;
-  padding-top: 60px;
-  padding-bottom: 80px;
   margin-top: 6rem;
+  border-top: 1px solid $bg-color--more-alt;
+}
+
+.footer-links {
+  color: $text-color---more-alt;
+  margin: 3rem auto;
+  // padding-top: 2rem;
+
+  p { margin-top: 1.5rem; }
+  a { color: $text-color--alt; }
 }
 
 .copyright-notice {
-  padding-top: 40px;
+  color: $text-color---more-alt;
+  background: $bg-color--more-alt;
+  padding: 20px 0;
+  text-align: center;
+
+  p { margin: 0; }
 }

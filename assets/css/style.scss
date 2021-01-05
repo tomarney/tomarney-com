@@ -3,11 +3,13 @@
 //  COLOURS
 // ===============
 
-$accent-color:      #800020;
-$bg-color:          #fffdfa;
-$bg-color--alt:     scale-color($accent-color, $lightness: -50%);
-$text-color--alt:   scale-color($bg-color, $lightness: -10%);
-$accent-color--alt: #fff;
+$accent-color:       #800020;
+$accent-color--alt:  #fffdfa;
+$bg-color:           #fffdfa;
+$bg-color--alt:         scale-color($accent-color, $lightness: -50%);
+$bg-color--more-alt:    scale-color($accent-color, $lightness: -80%);
+$text-color--alt:       scale-color($bg-color, $lightness: -10%);
+$text-color---more-alt: scale-color($bg-color, $lightness: -30%, $saturation: -70%);
 
 
 // ===============
