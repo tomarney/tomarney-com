@@ -91,7 +91,7 @@ a {
 .impliedlink--dark {
   :hover,
   &:focus {
-    color: $accent-color--alt;
+    color: $text-color--alt;
   }
 }
 
@@ -108,7 +108,7 @@ a {
 
 .link--dark {
   @extend .link;
-  color: $accent-color--alt;
+  color: $text-color--alt;
 }
 
 @mixin manicule {
