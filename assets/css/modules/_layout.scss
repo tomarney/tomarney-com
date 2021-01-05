@@ -48,3 +48,14 @@ figcaption {
   margin-bottom: 2.5rem;
   color: #777777;
 }
+
+hr {
+  border: none;
+  border-bottom: 0.5px solid black;
+  margin: 2em 0;
+
+  &.thin {
+    margin: 1em 0;
+  }
+
+}
