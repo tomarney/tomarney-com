@@ -59,3 +59,20 @@ hr {
   }
 
 }
+
+.md {
+  img {
+    max-width: 100%;
+
+    &.float-right {
+      float: right;
+      margin-left: 0.7em;
+    }
+
+    &.float-left {
+      float: left;
+      margin: .7em 1em;
+      margin-left: 0;
+    }
+  }
+}
