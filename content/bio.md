@@ -1,6 +1,8 @@
 ---
 date: 2020-11-21T20:01:20+01:00
-title: Biography
+title: "Biography"
+summary: "A quick summary of my education and previous employment."
+description: "PhD palaeoceanographer in Southampton at NOCS and BAS. Ex-software developer. BSc (Hons) Geology (Durham), MSc Oceanography (Soton)"
 draft: false
 ---
 
