@@ -1,20 +1,20 @@
 ---
-title: "Contact me"
+title: "Contact details"
+h1: "Get in touch"
 date: 2020-11-21T19:23:00+00:00
-summary: "How to get in touch with me"
-description: "Contact details for Tom Arney. Room NOCS/186/13, National Oceanography Centre, Southampton, SO14 3ZH. Email t.arney@soton.ac.uk, Twitter: @MrTomArney"
 draft: false
 ---
 
-Room 186/13
+I would love to hear from you if you're interested in my work, if you have a question about anything, or if you want to meet up. The best way is probably to send me a quick [email](mailto:t.arney@soton.ac.uk).<!--more-->
 
-Thomas Arney,\
+## Contact details
+
 Graduate School,\
 National Oceanography Centre,\
-Waterfront Campus,\
 University of Southampton,\
 Southampton,\
 SO14 3ZH
 
-email: [t.arney@soton.ac.uk](mailto:t.arney@soton.ac.uk) (*probably the best way*)\
-twitter: [@MrTomArney](https://twitter.com/mrtomarney)
+Email: [t.arney@soton.ac.uk](mailto:t.arney@soton.ac.uk)\
+Twitter: [@MrTomArney](https://twitter.com/mrtomarney)\
+Office: NOCS/184/13
