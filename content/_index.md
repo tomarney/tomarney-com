@@ -1,5 +1,6 @@
 ---
 title: "Homepage"
+description: "Tom Arney is a palaeoceanography PhD student at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey."
 date: 2020-10-10T20:01:20+01:00
 draft: false
 ---

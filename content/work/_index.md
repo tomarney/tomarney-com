@@ -1,5 +1,6 @@
 ---
 title: "My work"
+description: "I am a PhD student in Southampton, studying the early Pleistocene palaeoceanography of the West Antarctic margin."
 date: 2020-11-21T21:55:00+00:00
 draft: false
 ---

@@ -2,7 +2,7 @@
 date: 2020-11-21T20:01:20+01:00
 title: "Biography"
 summary: "A quick summary of my education and previous employment."
-description: "PhD palaeoceanographer in Southampton at NOCS and BAS. Ex-software developer. BSc (Hons) Geology (Durham), MSc Oceanography (Soton)"
+description: "PhD palaeoceanographer in Southampton at NOCS and BAS. Ex-software developer. BSc Geology (Durham), MSc Oceanography (Soton)"
 draft: false
 ---
 
@@ -47,12 +47,12 @@ BP award for best undergraduate poster
 
 ### Avast Software
 2016–2019\
-Web developer, responsible for www.ccleaner.com.
+Web developer, responsible for [ccleaner.com](https://www.ccleaner.com).
 
 ### Hivedome
 
 2015–2016\
-Developer, created and maintained internal tools
+Developer, created and maintained internal tools.
 
 ---
 
