@@ -16,6 +16,6 @@ At the moment I am studying for a PhD at the [National Oceanography Centre](http
 
 ## Past work
 
-My masters degree (also at Southampton), was originally going to be an analysis of {{<d11b>}} profiles from planktic foraminifera from a couple of IODP cruises, in order to investigate the extent of the effect of temperature on the depth of remineralisation. Unfortunately, the COVID-19 pandemic got in the way of that and I changed to using {{<d13c>}} gradients from previously published data, which involved the construction of a database of palaeoclimate data. The thesis is available [on github](https://github.com/t-arney/msc-thesis).
+My master's degree (also at Southampton), was originally going to be an analysis of {{<d11b>}} profiles from planktic foraminifera from a couple of IODP cruises, in order to investigate the extent of the effect of temperature on the depth of remineralisation. Unfortunately, the COVID-19 pandemic got in the way of that and I changed to using {{<d13c>}} gradients from previously published data, which involved the construction of a database of palaeoclimate data. The thesis is available [on github](https://github.com/t-arney/msc-thesis).
 
-The Durham geology degree involved a six-week independent mapping project as a dissertation; I did mine on the spectacular folding and faulting of the carboniferous sediments in the coastal exposures in Berwick and Scremerston (northumberland, north-east UK).
+My undergraduate degree was a BSc in geology from Durham, which involved a six-week independent mapping project as a dissertation; I did mine on the spectacular folding and faulting of the carboniferous sediments in the coastal exposures in Berwick and Scremerston (Northumberland, north-east UK).
