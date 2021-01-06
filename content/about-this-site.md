@@ -1,9 +1,10 @@
 ---
 title: "About this site"
 # subtitle: "TL;DR: It's a Hugo site with a custom theme, hosted on Netlify"
+summary: "Interested in how I built this website?"
+description: "The personal website of Tom Arney. Built using Hugo and hosted on Netlify, with a custom theme."
 date: 2020-11-21T19:15:20+00:00
 draft: false
-summary: "Interested in how I built this website?"
 ---
 
 This is a static website built with [Hugo](https://gohugo.io) and hosted on [Netlify](https://www.netlify.com/). You'll be pleased to hear I use no cookies so there's no need for annoying full-page pop-ups. In fact there's little more than text and images. This is my own hand-made theme, but I'm very grateful for the headstart on directory structure from [Niklas Fasching](https://github.com/niklasfasching)'s bare minimum [Whitespace](https://github.com/niklasfasching/whitespace) theme.

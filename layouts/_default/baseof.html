@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <title>{{ .Title }} - Tom Arney</title>
-  {{/*
-  <meta name="description" content="" />
-  */}}
+  <meta name="description" content="
+    {{ with .Description }}{{ . }}
+    {{ else }}{{if .IsPage}}{{ .Summary }}
+    {{ else }}{{ with .Site.Params.description }}{{ . }}
+    {{ end }}{{ end }}{{ end }}">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {{/* TODO: populate the meta tags per page
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  */}} {{if not hugo.IsProduction }}
+  {{if or (not hugo.IsProduction) (.Params.noindex) }}
   <meta name="robots" content="noindex" />
+  {{ end }}
+  {{ if or (eq .Kind "home") (eq .Kind "page") }}
+  <link rel="canonical" href="{{ .Permalink }}" />
   {{ end }}
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -1,0 +1,7 @@
+baseURL = "https://tomarney.com/"
+languageCode = "en-gb"
+title = "Tom Arney"
+enableRobotsTXT = true
+
+[Params]
+  description = "Tom Arney is a palaeoceanography PhD student at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey."
