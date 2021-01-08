@@ -66,6 +66,8 @@
       </div>
       */}}
       <p>
+      <p>tomarney.com<br />
+        <a href="/privacy" class="impliedlink--dark">Privacy</a> | 
         <a href="/about-this-site" class="impliedlink--dark">About this site</a>
       </p>
       <p>Elsewhere on the interwebs<br />
@@ -88,6 +90,10 @@
       </div>
     </div>
   </footer>
+
+  {{ if hugo.IsProduction }}
+  <script data-goatcounter="https://tomarney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  {{ end }}
 </body>
 
 </html>
