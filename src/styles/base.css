@@ -1,0 +1,11 @@
+/* 
+ *  Custom Base classes
+ *
+ */
+
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+}

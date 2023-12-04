@@ -1,0 +1,19 @@
+---
+const { href } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+---
+
+<li>
+	<a
+		href={href}
+		class={`block py-2 px-3 md:p-0 rounded ${
+			isActive
+				? "text-white bg-primary-dark md:bg-transparent md:text-primary-dark"
+				: "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary"
+		} `}
+	>
+		<slot />
+	</a>
+</li>
