@@ -9,4 +9,19 @@
     @apply text-4xl md:text-5xl
   } */
 
+  .font-condensed {
+    font-stretch: 92.5%;
+  }
+
+  .font-stretch-none {
+    font-stretch: 100%;
+  }
+
+  .small-caps {
+    font-variant-caps: small-caps;
+  }
+
+  .all-small-caps {
+    font-variant-caps: all-small-caps;
+  }
 }
