@@ -27,4 +27,4 @@ const publications = defineCollection({
 	}),
 });
 
-export const collections = { posts: posts, publications: publications };
+export const collections = { posts, publications };

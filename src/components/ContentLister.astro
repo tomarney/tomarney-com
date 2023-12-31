@@ -1,6 +1,12 @@
 ---
 import FormattedDate from './FormattedDate.astro';
 import { getCollection } from "astro:content";
+import { type ContentCollectionKey } from 'astro:content';
+
+interface Props {
+	collectionName: ContentCollectionKey;
+}
+
 const { collectionName } = Astro.props;
 
 const entries = (await getCollection(collectionName)).sort(
