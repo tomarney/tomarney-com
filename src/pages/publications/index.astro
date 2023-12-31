@@ -1,0 +1,25 @@
+---
+import Page from "../../layouts/Page.astro";
+import { Image } from "astro:content";
+import ContentLister from "../../components/ContentLister.astro";
+---
+
+<Page>
+  <main> 
+
+    <h1>Publications</h1>
+
+    <p>
+      I am currently working on my PhD project, which I've tried to summarise <a href="/posts/my-phd-project">here</a>. Publications coming soon!
+    </p>
+
+    <p>Until then, here are my bachelors and masters dissertations:</p>
+    
+    <section>
+  
+      <ContentLister collectionName="publications" />
+    
+    </section>
+
+  </main>
+</Page>

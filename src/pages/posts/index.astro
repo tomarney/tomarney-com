@@ -1,0 +1,16 @@
+---
+import Page from "../../layouts/Page.astro";
+import ContentLister from "../../components/ContentLister.astro";
+---
+
+<Page>
+  <main>
+    <h1>Posts</h1>
+    <p class="mb-16">Notes, comments, explainers, articles; most recent first.</p>
+
+    <section>
+      <ContentLister collectionName="posts" />
+    </section>
+
+  </main>
+</Page>

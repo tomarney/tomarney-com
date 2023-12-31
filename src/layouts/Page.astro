@@ -2,9 +2,10 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseHead from "../components/BaseHead.astro";
 import Nav from "../components/Nav.astro";
+import FooterLink from "../components/FooterLink.astro";
 
 const today = new Date();
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { title = Astro.props.frontmatter?.title || SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,15 +15,17 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
   </head>
 
   <body class="font-serif bg-buff-500">
-    <div class="max-w-xl mx-auto px-5 print:max-w-none">
-      <header class="pt-12 pb-4 mb-12 border-b border-burgundy-100">
+    <div class="max-w-2xl mx-auto px-5 print:max-w-none">
+      <header class="pt-12 pb-4 mb-16 border-b border-burgundy-100">
         <Nav />
       </header>
 
 
 
-      <div class="prose">
+      <div class="prose prose-stone prose-a:decoration-1 hover:prose-a:decoration-2 prose-a:decoration-burgundy-500 prose-a:font-normal hover:prose-a:grade-100 prose-headings:font-normal prose-h1:text-3xl prose-strong:font-medium">
+
         <slot />
+      
       </div>
     
     
@@ -30,41 +33,27 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     </div>
 
     <footer class="bg-burgundy-200 text-buff-100 mt-24 border-t border-burgundy-100">
-      <div class="max-w-xl mx-auto px-5 print:max-w-none py-12 print:hidden">
-        <p> tomarney.com<br />
-          <a href="/privacy" class="text-buff-200 hover:text-buff-500">
-            Privacy
-          </a> |
-          <a href="/about-this-site" class="text-buff-200 hover:text-buff-500">
-            About this site
-          </a>
+      <div class="max-w-2xl mx-auto px-5 print:max-w-none py-12 print:hidden">
+        <p>tomarney.com<br />
+          <FooterLink href="/privacy">Privacy</FooterLink> |
+          <FooterLink href="/about-this-site">About this site</FooterLink>
         </p>
 
         <p class="mt-6">
           Elsewhere on the interwebs<br />
-          <a class="text-buff-200 hover:text-buff-500" href="https://orcid.org/0000-0003-4380-4079">
-            ORCiD
-          </a>
+          <FooterLink href="https://orcid.org/0000-0003-4380-4079">ORCiD</FooterLink>
             |
-          <a class="text-buff-200 hover:text-buff-500" href="https://www.southampton.ac.uk/people/5xv9zb/mr-thomas-arney">
-            UoS profile
-          </a>
+          <FooterLink href="https://www.southampton.ac.uk/people/5xv9zb">UoS profile</FooterLink>
             |
-          <a class="text-buff-200 hover:text-buff-500" href="https://www.linkedin.com/in/tomarney/">
-            LinkedIn
-          </a>
+          <FooterLink href="https://www.linkedin.com/in/tomarney/">LinkedIn</FooterLink>
             |
           <a rel="me" class="text-buff-200 hover:text-buff-500" href="https://fediscience.org/@tomarney">
             Mastodon
           </a>
             |
-          <a class="text-buff-200 hover:text-buff-500" href="https://github.com/tomarney">
-            GitHub
-          </a>
+          <FooterLink href="https://github.com/tomarney">GitHub</FooterLink>
             |
-          <a class="text-buff-200 hover:text-buff-500" href="mailto:t.arney@soton.ac.uk">
-            email
-          </a>
+          <FooterLink href="mailto:t.arney@soton.ac.uk">email</FooterLink>
         </p>
       </div>
 
@@ -76,8 +65,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
                href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
                rel="license"
                title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License">
-              CC&#8209;BY&#8209;NC&#8209;SA&nbsp;4.0&nbsp;licence
-            </a>.
+              CC&#8209;BY&#8209;NC&#8209;SA&nbsp;4.0&nbsp;licence</a>.
           </p>
         </div>
       </div>

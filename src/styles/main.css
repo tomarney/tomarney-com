@@ -5,3 +5,7 @@
 @import "base";
 @import "components";
 @import "utilities";
+
+p, li, a, span {
+  transition: font-variation-settings 2s;
+}
