@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Nav from "../components/Nav.astro";
 import FooterLink from "../components/FooterLink.astro";
 
+const isProd = import.meta.env.PROD;
 const today = new Date();
 const { title = Astro.props.frontmatter?.title || SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
@@ -71,6 +72,11 @@ const { title = Astro.props.frontmatter?.title || SITE_TITLE, description = SITE
       </div>
     </footer>
 
-    <!-- <script data-goatcounter="https://tomarney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
+    { 
+      isProd && (
+        <script data-goatcounter="https://tomarney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+      )
+    }
+    
   </body>
 </html>
