@@ -9,7 +9,13 @@ const posts = defineCollection({
 		// Transform string to Date object
 		published: z.coerce.date(),
 		updated: z.coerce.date().optional(),
+		draft: z.boolean().default(true),
 		heroImage: image().optional(),
+		heroImageAlt: z.string().optional(),
+		heroImageCaption: z.string().optional(),
+		previousPost: z.string().optional(),
+		nextPost: z.string().optional(),
+		tags: z.array(z.string()).optional(),
 	}),
 });
 
@@ -23,7 +29,11 @@ const publications = defineCollection({
 		// Transform string to Date object
 		published: z.coerce.date(),
 		updated: z.coerce.date().optional(),
+		draft: z.boolean().default(true),
 		heroImage: image().optional(),
+		heroImageAlt: z.string().optional(),
+		heroImageCaption: z.string().optional(),
+		tags: z.array(z.string()).optional(),
 	}),
 });
 

@@ -1,0 +1,146 @@
+---
+import Page from "../layouts/Page.astro";
+
+import Figure from "../components/Figure.astro";
+import { Image } from "astro:assets";
+import rockies from "../assets/img/rockies-portrait.jpg";
+import PS128 from "../assets/img/arney-deck-monkey_LLJ.jpg";
+import tenby from "../assets/img/arney-tenby-2022_MD.jpg";
+
+const descr =
+    "Tom Arney is a palaeoclimate PhD student at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey.";
+
+const collabs = [
+    "University of Southampton",
+    "British Antarctic Survey",
+    "Heidelberg University",
+    "University College Dublin",
+    "Alfred Wegener Institut",
+    "Toyama University",
+    "University of Portsmouth",
+    "Colorado College",
+    "University of Cambridge",
+    "British Ocean Sediment Core Research Facility",
+];
+---
+
+<Page title="Tom Arney" description={descr}>
+    <Figure src="../assets/img/core-proxies-banner.jpg" alt="" />
+
+    <h1>Past climates from sediment provenance</h1>
+
+    <p class="mb-2">
+        How did wind, water, and ice move sediment thousands or millions of
+        years ago?
+    </p>
+    <p class="my-2">
+        What does that mean the environment looked like at the time?
+    </p>
+    <p class="my-2">
+        What can that tell us about our present and future climate?
+    </p>
+
+    <div class="flex flex-col gap-8 sm:flex-row mt-16">
+        <div class="shrink-0">
+            <Image
+                src={rockies}
+                class="not-prose sm:mt-2 mx-auto"
+                height="350"
+                alt="a photo of Tom Arney, with the snow-covered Canadian Rockies mountains in the background"
+            />
+        </div>
+
+        <div>
+            <p class="my-0">
+                My current focus as a final-year PhD candidate in Southampton is
+                the history of the West Antarctic Ice Sheet. I use the isotopic
+                geochemistry of iceberg-rafted debris to determine the extent of
+                the ice sheet through the Plio-Pleistocene. If we understand
+                this better, we can better predict how Antarctica will respond
+                to a warmer world, with big implications for global sea level
+                rise.
+            </p>
+            <p class="text-center sm:text-left mb-0">
+                More:
+                <a href="/posts/my-phd-project" class="inline-block">
+                    my PhD project
+                </a>
+                &mdash;
+                <a href="/bio" class="inline-block"> biography (CV)</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-28">
+        <h2>Collaborations</h2>
+
+        <p>
+            My PhD project has grown to include collaborators from each of the
+            institutions below. Coordinating meetings and the work of so many
+            disparate people and labs has sometimes been challenging, but
+            working with lots of clever people all over the world is one of the
+            best parts of academia.
+        </p>
+
+        <div class="flex gap-y-1 gap-x-6 flex-wrap justify-center text-center">
+            {collabs.map((i) => <span>{i}</span>)}
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-8 sm:flex-row mt-28">
+        <a href="posts/polar-post" class="sm:order-2 shrink-0">
+            <Image
+                src={PS128}
+                class="not-prose mx-auto mt-2"
+                height="400"
+                alt="a photo of a man in bright orange waterproofs on the working deck of a ship in sea ice"
+            />
+        </a>
+
+        <div>
+            <h2 class="mt-0">Antarctic expedition</h2>
+            <p>
+                The highlight of my PhD so far was sailing as a
+                micropalaeontologist on a marine geology expedition on the
+                German research icebreaker <i>Polarstern</i>. Read a series of
+                letters I wrote documenting the two months I spent on the East
+                Antarctic coast <a href="posts/polar-post">here</a>.
+            </p>
+            <p>
+                Photo shows me engaged in the glamorous job of "deck monkey",
+                clearing mud off the deck (though with a nice view).
+            </p>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-8 sm:flex-row mt-28">
+        <div class="shrink-0">
+            <Image
+                src={tenby}
+                class="not-prose mx-auto mt-2"
+                height="300"
+                alt="a man in a red hard hat pointing at some rocks, explaining something"
+            />
+        </div>
+
+        <div>
+            <h2 class="mt-0">Teaching{/* & outreach */}</h2>
+            <p>
+                I've helped deliver practical sessions covering
+                palaeoceanography, ocean biogeochemistry, geological mapping,
+                statistics, spectral analysis, R and MATLAB, and field courses
+                (my favourite) on the Jurassic Coast and in Pembrokeshire (as
+                seen, in dynamic teaching stance, in the neighbouring paparazzi
+                shot).
+            </p>
+        </div>
+    </div>
+    {
+        /* TODO
+    
+        - Key findings & publications: Briefly mention your most impactful discoveries or publications, with links for further reading.
+        - Media & presentations: List links to your featured articles, podcasts, or presentations
+        - teaching experience or involvement in mentoring students
+        - Contact information: Make it easy for visitors to connect with you via email, social media, or a contact form. */
+    }
+</Page>

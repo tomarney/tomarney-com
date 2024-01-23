@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 import Page from "./Page.astro";
 import { SITE_TITLE } from "../consts";
 
-const { title, subtitle, description, published, updated, heroImage } =
+const { title, subtitle, published, updated, heroImage, heroImageAlt="", heroImageCaption="", previousPost, nextPost } =
   Astro.props;
 ---
 
@@ -14,7 +14,7 @@ const { title, subtitle, description, published, updated, heroImage } =
       {
         heroImage && (
           <div class="w-full">
-            <Picture src={heroImage} alt="" class="block my-0 mx-auto" />
+            <Picture src={heroImage} alt={heroImageAlt} title={heroImageCaption} class="block my-0 mx-auto" />
           </div>
         )
       }
@@ -41,6 +41,28 @@ const { title, subtitle, description, published, updated, heroImage } =
       </div>
 
       <slot />
+
+      {
+        (previousPost || nextPost) && (
+          <div class="flex justify-between gap-4 my-16">
+            {
+              previousPost && (
+                  <div>
+                    <a href={previousPost}>&larr; Previous post</a>
+                  </div>
+              )
+            }
+            {
+              nextPost && (
+                <div>
+                  <a href={nextPost}>Next post &rarr;</a>
+                </div>
+              )
+            }
+          </div>
+        )
+      }
+
     </article>
   </main>
 </Page>

@@ -21,6 +21,8 @@ module.exports = {
         buff: {
           100: '#c8b599',
           200: '#ffe9c8',
+          300: '#ffefd8',
+          400: '#fffbf5',
           500: '#fffdfa'
         },
         burgundy: {

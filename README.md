@@ -1,25 +1,5 @@
-# Astro Tailwind Blog
+# Tom Arney personal website
 
-Features:
+:globe_with_meridians: [tomarney.com](https://tomarney.com?ref=gh_readme)
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## Project Structure
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+:beetle: If you've noticed a bug, please create an issue. Thanks!
