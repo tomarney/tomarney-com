@@ -1,8 +1,9 @@
----
-title: "Privacy"
-description: 'No cookies, GDPR compliant, minimal analytics'
-layout: '../layouts/Page.astro'
----
+import Page from '../layouts/Page.astro'
+
+{/* TODO: get noindex to work in .md frontmatter */}
+
+<Page title="Privacy" noindex>
+
 
 # Privacy
 
@@ -13,3 +14,6 @@ I'm the kind who blocks tracking scripts and third-party cookies, so I want my w
 I do, however, want to know if what I write is actually being read; if it is, I'm likely to put more effort in -- I'd like an equivalent to YouTube's view count. I use [Umami](https://umami.is/), a "simple, fast, privacy-focused alternative to Google Analytics".
 
 This solution uses no cookies (so there's no need for annoying full-page pop-ups), and anonymises the small amount of data it does collect. I have no idea who you are unless you [tell me](/contact) (which I'd love).
+
+
+</Page>

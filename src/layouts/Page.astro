@@ -6,13 +6,17 @@ import FooterLink from "../components/FooterLink.astro";
 
 const isProd = import.meta.env.PROD;
 const today = new Date();
-const { title = Astro.props.frontmatter?.title || SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const {
+  title = Astro.props.frontmatter?.title || SITE_TITLE,
+  description = Astro.props.frontmatter?.description || SITE_DESCRIPTION,
+  noindex = false,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-GB" class="bg-burgundy-100">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} noindex={noindex} />
   </head>
 
   <body class="font-serif bg-white">

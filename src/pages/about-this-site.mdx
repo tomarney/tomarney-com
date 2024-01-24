@@ -1,8 +1,9 @@
----
-title: "About this site"
-description: ''
-layout: '../layouts/Page.astro'
----
+import Page from '../layouts/Page.astro'
+
+{/* TODO: get noindex to work in .md frontmatter */}
+
+<Page title="About this site" noindex>
+  
 
 # About this site
 
@@ -12,4 +13,5 @@ The site is in a [public repo](https://github.com/tomarney/tomarney-com) on GitH
 
 If you notice a bug or anything wrong, please tell me directly or [create an issue](https://github.com/tomarney/tomarney-com/issues/new/choose) on the repo.
 
-*See also:* [Privacy](/privacy)
+
+</Page>
