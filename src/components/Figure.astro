@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-	src: string;
-	alt: string;
+	src: ImageMetadata;
 	height?: number;
+	alt: string;
 	caption?: string;
 	credit?: string;
 	wide?:boolean;
@@ -13,11 +15,9 @@ interface Props {
 const { src, alt, caption, credit, height, wide=false, sideCaption=false } = Astro.props;
 
 // Note: options `wide` and `sidecaption` will be true if the attributes are given, regardless of their content
-
-const img = import(src);
 ---
 
 <figure class={`flex flex-col ${sideCaption && 'lg:flex-row lg:place-items-end lg:gap-4'} ${wide && 'xl:-ml-10 xl:-mr-48'}`}>
-	<Image src={img} alt={alt} height={height} class="mx-auto" />
+	<Image src={src} alt={alt} height={height} class="mx-auto" />
 	<figcaption class={`grow text-center ${sideCaption ? 'lg:text-left' : 'md:text-left'} ${wide && 'xl:ml-10 xl:mr-48'}`} ><span set:html={caption}></span> {credit && (<em> Credit:&nbsp;{credit}</em>)}</figcaption>
 </figure>

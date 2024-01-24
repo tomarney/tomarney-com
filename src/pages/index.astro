@@ -3,6 +3,8 @@ import Page from "../layouts/Page.astro";
 
 import Figure from "../components/Figure.astro";
 import { Image } from "astro:assets";
+
+import banner from "../assets/img/core-proxies-banner.jpg";
 import rockies from "../assets/img/rockies-portrait.jpg";
 import PS128 from "../assets/img/arney-deck-monkey_LLJ.jpg";
 import tenby from "../assets/img/arney-tenby-2022_MD.jpg";
@@ -25,7 +27,7 @@ const collabs = [
 ---
 
 <Page title="Tom Arney" description={descr}>
-    <Figure src="../assets/img/core-proxies-banner.jpg" alt="" />
+    <Figure src={banner} alt="" />
 
     <h1>Past climates from sediment provenance</h1>
 
