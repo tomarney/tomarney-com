@@ -16,6 +16,15 @@ let entries = (await getCollection(collectionName)).sort(
 	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
 
+entries = entries.filter((p) =>   {
+	  // if production, don't return draft posts
+    if (import.meta.env.PROD) {
+      return p.data.draft !== true;
+    } else {
+      return true
+    }
+	})
+
 if (tagFilter) {
 	entries = entries.filter((p) => p.data.tags?.includes(tagFilter) ?? false);
 }
