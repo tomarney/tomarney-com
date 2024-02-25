@@ -9,3 +9,7 @@
 p, li, a, span {
   transition: font-variation-settings 2s;
 }
+
+mjx-container svg {
+  display: inline;
+}
