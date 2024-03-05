@@ -1,0 +1,54 @@
+---
+title: Pixel barometer
+subtitle: Testing my phone as an altimeter
+description: My new phone has a hidden barometer – how sensitive is it? And can it measure my altitude?
+published: 2023-07-31
+draft: false
+# heroImage: '../../assets/img/blog-image.jpg'
+---
+
+import Figure from '../../components/Figure.astro';
+
+I got a new phone recently, and one of the first apps I installed was, of course, RWTH Aachen University's excellent [phyphox](https://phyphox.org) app. I was interested to see the option to measure pressure wasn't greyed out like it had been on my old phone -- did that mean I had a barometer in there? The same app said I did indeed:
+
+```
+Pressure (type 6)
+- Name: ICP20100 Pressure Sensor
+- Range: 1100.0 hPa
+- Resolution: 1.0E-4 hPa
+- Min delay: 25000 µs
+- Max delay: 1000000 µs
+```
+
+Resolution: 0.0001 hPa? That seems pretty precise! Maybe I could test how good it is...
+
+## Introduction
+
+Barometric altimeters use variations in atmospheric pressure to sense changes in elevation, since air gets less dense (= less pressure) the higher up you go. Atmospheric pressure is measured in hecto-pascals (1 hPa = 100 Pa), and at sea level, the pressure is usually around 1000 hPa.
+
+In order to test my hidden barometer, I'll use it like an altimeter. To get around the changes in atmospheric pressure caused by weather, I'll try and measure a relative change: the difference in height between two points. If I choose well-measured points, I can compare it to the "correct" answer and see how well my phone performs.
+
+## Methods
+
+Near where I live is a hill with a trig point -- a concrete pillar with a very accurately measured elevation, used to map Britain using triangulation (the blue triangle with a spot in the map). There is also a spot height on a nearby road junction, less precise but also reliable (orange cross in the map). These two measurements were made by Britain's national mapping agency, the Ordnance Survey -- so they're as near to the truth as we need for this.
+
+import map from "../../assets/img/baro-map.svg"
+
+<Figure src={map} alt="map of the area, with orange contours and black roads. A ridge on the right runs left to right and extends out of the image, with a lower hill to the left of it. There is a road in the north also running left to right, and a smaller road running left to right to the south of the hills, which curves around the smaller hill until it meets the larger road at a T-junction"/>
+
+
+We can use the change in pressure, Δ*P*, to work out the change in height, Δ*h*, using a form of the hydrostatic equation:
+
+$$
+\Delta h = \frac{\Delta P}{\rho \cdot g}
+$$
+
+where *ρ* is the density of air (1.20 kg.m<sup>-3</sup>), and the *g* is the acceleration due to gravity (9.81 m.s<sup>-2</sup>).
+
+## Results
+
+{/* plots */}
+
+The change in pressure is the difference between the road junction measurement and the trig point one. That gives us 1.47 hPa, which we'll multiply by 100 to get 147 Pa. Plugging everything into the formula above, we get our answer: 12.3 ± xx m.
+
+The Ordnance Survey has a difference in height of 10.7 m -- not too far off! 
