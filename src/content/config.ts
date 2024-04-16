@@ -31,7 +31,7 @@ const publications = defineCollection({
 		published: z.coerce.date(),
 		updated: z.coerce.date().optional(),
 		draft: z.boolean().default(true),
-		doi: z.string.optional(),
+		doi: z.string().optional(),
 		heroImage: image().optional(),
 		heroImageAlt: z.string().optional(),
 		heroImageCaption: z.string().optional(),
