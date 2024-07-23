@@ -1,6 +1,6 @@
 ---
 import Page from "../../layouts/Page.astro";
-import ContentLister from "../../components/ContentLister.astro";
+import PubsLister from "../../components/PubsLister.astro";
 ---
 
 <Page>
@@ -13,8 +13,14 @@ import ContentLister from "../../components/ContentLister.astro";
     </p>
 
     <section>
-  
-      <ContentLister collectionName="publications" />
+
+      <h2>Articles</h2>
+
+      <PubsLister collectionName="publications" typeFilter="Article"/>
+
+      <h2>Talks</h2>
+
+      <PubsLister collectionName="publications" typeFilter="Talk"/>
     
     </section>
 
