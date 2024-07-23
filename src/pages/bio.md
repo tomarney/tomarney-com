@@ -1,6 +1,6 @@
 ---
 title: "Biography"
-description: "PhD palaeoceanographer in Southampton at NOCS and BAS. Ex-software developer. BSc Geology (Durham), MSc Oceanography (Soton)"
+description: "PhD palaeo-geochemist in Southampton at NOCS and BAS. Ex-software developer. BSc Geology (Durham), MSc Oceanography (Soton)"
 layout: '../layouts/Page.astro'
 ---
 
@@ -8,19 +8,19 @@ layout: '../layouts/Page.astro'
 
 I am a PhD candidate at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey. I also have previous professional software development experience.
 
-My current research interests are in polar and climate science using palae&shy;ocean&shy;ographic proxy records. I'm particularly interested in what the provenance of marine sediments can tell us about past climate. I’m also really interested in data visualisation, visual communication, and design.
+My current research interests are in polar and climate science using climate proxies in marine sediments. I'm particularly interested in what the provenance of marine sediments can tell us about past climate. I’m also really interested in data visualisation, visual communication, and design.
 
 When I’m not working, you'll find me outside: running, cycling (road and gravel), trekking, wild swimming, sailing, SUP, kayaking, or climbing.
 
 ## Education
 
-### PhD, Antarctic palaeoceanography
+### PhD, Antarctic palaeoclimate
 
 2020–Present\
 National Oceanography Centre, University of Southampton\
 British Antarctic Survey
 
-[Project](/posts/my-phd-project): “*Early Pleistocene palaeoceanography of the West Antarctic margin*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/), and [Paul Wilson](https://www.southampton.ac.uk/people/5wync6)
+[Project](/posts/my-phd-project): “*Plio-Pleistocene palaeoclimate on the West Antarctic margin*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/), and [Paul Wilson](https://www.southampton.ac.uk/people/5wync6)
 
 ### MSc, Oceanography
 
