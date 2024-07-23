@@ -30,7 +30,7 @@ const { title, subtitle, published, updated, heroImage, heroImageAlt="", heroIma
       }
 
       <div class="mt-8 mb-10 text-sm text-stone-500">
-        Published: <FormattedDate date={published} />
+        <FormattedDate date={published} />
         {
           updated && (
             <span class="italic ml-2">

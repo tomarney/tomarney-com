@@ -1,0 +1,57 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+	typeFilter: string;
+}
+
+const { typeFilter = "all" } = Astro.props;
+
+let entries = (await getCollection("publications")).sort(
+	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+
+entries = entries.filter((p) => {
+	// if production, don't return draft posts
+	if (import.meta.env.PROD) {
+		return p.data.draft !== true;
+	} else {
+		return true;
+	}
+});
+
+if (typeFilter !== "all") {
+	entries = entries.filter((p) => p.data.type == typeFilter);
+}
+---
+
+<ul class="not-prose list-none">
+	{
+		entries.map((entry) => (
+			<li class="mb-20 md:mb-14 group">
+				<a
+					href={`/publications/${entry.slug}/`}
+				>
+					<p class="mb-2 text-lg font-medium text-gray-900 group-hover:grade-100 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
+						{entry.data.title}
+					</p>
+
+					<p class="font-normal text-gray-900 mb-4">
+						{entry.data.authors}
+					</p>
+					{entry.data.publication && (
+						<p class="font-normal text-gray-900 mb-4">
+							{entry.data.publication}
+						</p>
+					)}
+					{entry.data.isPublished && (
+						<p class="m-0 text-gray-600">
+							<FormattedDate date={entry.data.published} />
+						</p>
+					)}
+				</a>
+			</li>
+		))
+	}
+</ul>
