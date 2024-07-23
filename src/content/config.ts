@@ -23,13 +23,14 @@ const publications = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({image}) => z.object({
 		title: z.string(),
-		subtitle: z.string().optional(),
 		authors: z.string(),
 		type: z.string(),
+		publication: z.string().optional(),
 		description: z.string(),
 		// Transform string to Date object
 		published: z.coerce.date(),
 		updated: z.coerce.date().optional(),
+		isPublished: z.boolean().default(true),
 		draft: z.boolean().default(true),
 		doi: z.string().optional(),
 		heroImage: image().optional(),

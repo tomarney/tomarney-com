@@ -1,29 +1,23 @@
 ---
-import { Image } from "astro:assets";
 import FormattedDate from "./FormattedDate.astro";
 import { getCollection } from "astro:content";
-import { type ContentCollectionKey } from "astro:content";
 
 interface Props {
-	collectionName: ContentCollectionKey;
 	typeFilter: string;
 }
 
-const { collectionName, type: typeFilter = "all" } = Astro.props;
+const { typeFilter = "all" } = Astro.props;
 
-let entries = (await getCollection(collectionName)).sort(
+let entries = (await getCollection("publications")).sort(
 	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
-// sort old to new
-entries = entries.reverse();
 
 entries = entries.filter((p) => {
 	// if production, don't return draft posts
 	if (import.meta.env.PROD) {
 		return p.data.draft !== true;
 	} else {
-		// don't include BSc and MSc dissertations
-		return p.data.type !== "Dissertation";
+		return true;
 	}
 });
 
@@ -32,39 +26,30 @@ if (typeFilter !== "all") {
 }
 ---
 
-<ul class="not-prose list-none mt-16">
+<ul class="not-prose list-none">
 	{
 		entries.map((entry) => (
 			<li class="mb-20 md:mb-14 group">
 				<a
-					href={`/${collectionName}/${entry.slug}/`}
-					class="flex flex-col md:flex-row gap-4 h-full"
+					href={`/publications/${entry.slug}/`}
 				>
-					<div class="md:max-w-[340px] md:order-2">
-						{entry.data.heroImage && (
-							<Image
-								class="mb-2 md:mb-0 object-contain w-full"
-								src={entry.data.heroImage}
-								alt={entry.data.heroImageAlt || ""}
-							/>
-						)}
-					</div>
-					<div class="md:order-1 grow">
-						<p class="mb-2 text-lg font-medium text-gray-900 group-hover:grade-100 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
-							{entry.data.title}
+					<p class="mb-2 text-lg font-medium text-gray-900 group-hover:grade-100 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
+						{entry.data.title}
+					</p>
+
+					<p class="font-normal text-gray-900 mb-4">
+						{entry.data.authors}
+					</p>
+					{entry.data.publication && (
+						<p class="font-normal text-gray-900 mb-4">
+							{entry.data.publication}
 						</p>
-						{entry.data.subtitle && (
-							<p class="font-normal text-gray-900 mb-4">
-								{entry.data.subtitle}
-							</p>
-						)}
-						<p class="font-normal text-gray-700 mb-2">
-							{entry.data.description}
-						</p>
+					)}
+					{entry.data.isPublished && (
 						<p class="m-0 text-gray-600">
 							<FormattedDate date={entry.data.published} />
 						</p>
-					</div>
+					)}
 				</a>
 			</li>
 		))
