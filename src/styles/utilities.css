@@ -9,30 +9,6 @@
     @apply text-4xl md:text-5xl
   } */
 
-  .semicondensed {
-    font-stretch: 87.5%;
-  }
-  
-  .unstretched {
-    font-stretch: 100%;
-  }
-  
-  .-grade-50 {
-    font-variation-settings: 'GRAD' -50
-  }
-
-  .grade-0 {
-    font-variation-settings: 'GRAD' 0
-  }
-
-  .grade-50 {
-    font-variation-settings: 'GRAD' 50
-  }
-  
-  .grade-100 {
-    font-variation-settings: 'GRAD' 100
-  }
-
   .small-caps {
     font-variant-caps: small-caps;
   }
@@ -41,59 +17,4 @@
     font-variant-caps: all-small-caps;
   }
 
-  .optical-size-xs {
-    font-variation-settings: 'opsz' 12
-  }
-  
-  .optical-size-sm {
-    font-variation-settings: 'opsz' 14
-  }
-  
-  .optical-size-base {
-    font-variation-settings: 'opsz' 16
-  }
-
-  .optical-size-auto {
-    font-optical-sizing: auto;
-  }
-  
-  .optical-size-lg {
-    font-variation-settings: 'opsz' 18
-  }
-  
-  .optical-size-xl {
-    font-variation-settings: 'opsz' 20
-  }
-  
-  .optical-size-2xl {
-    font-variation-settings: 'opsz' 24
-  }
-  
-  .optical-size-3xl {
-    font-variation-settings: 'opsz' 30
-  }
-  
-  .optical-size-4xl {
-    font-variation-settings: 'opsz' 36
-  }
-  
-  .optical-size-5xl {
-    font-variation-settings: 'opsz' 48
-  }
-  
-  .optical-size-6xl {
-    font-variation-settings: 'opsz' 60
-  }
-  
-  .optical-size-7xl {
-    font-variation-settings: 'opsz' 72
-  }
-  
-  .optical-size-8xl {
-    font-variation-settings: 'opsz' 96
-  }
-  
-  .optical-size-9xl {
-    font-variation-settings: 'opsz' 128
-  }
 }

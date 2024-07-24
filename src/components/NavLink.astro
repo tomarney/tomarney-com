@@ -8,10 +8,10 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <li>
 	<a
 		href={href}
-		class={`semicondensed font-light text-lg ${
+		class={`font-light text-lg decoration-burgundy-500 ${
 			isActive
-				? "grade-100"
-				: "hover:grade-100"
+				? "font-medium"
+				: "hover:underline"
 		} `}
 	>
 		<slot />

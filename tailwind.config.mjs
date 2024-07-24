@@ -9,8 +9,8 @@ module.exports = {
       ...defaultTheme.screens,
     },
     fontFamily: {
-      'serif': ['"Roboto Serif"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      'sans' : defaultTheme.fontFamily.sans,
+      'serif': defaultTheme.fontFamily.serif,
+      'sans' : ['"Rosario"', ...defaultTheme.fontFamily.sans],
       'mono' : defaultTheme.fontFamily.mono
     },
     extend: {
