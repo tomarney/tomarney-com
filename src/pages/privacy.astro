@@ -1,0 +1,72 @@
+---
+import Page from "../layouts/Page.astro";
+---
+
+<Page title="Privacy" noindex>
+  <h1>Privacy</h1>
+
+  <p><span class="font-semibold">No cookies, GDPR compliant, minimal analytics</span></p>
+
+  <p>
+    I'm the kind who blocks tracking scripts and third-party cookies, so I want
+    my website to be as simple and transparent as possible. I don't use Google
+    Analytics or include embedded share buttons from any of the social networks,
+    because I don't want anyone reading this to have to give any of their
+    personal data away.
+  </p>
+
+  <p>
+    I do, however, want to know if what I write is actually being read; if it
+    is, I'm likely to put more effort in &ndash; I'd like an equivalent to YouTube's
+    view count. I use <a href="https://umami.is/">Umami</a>, a "simple, fast,
+    privacy-focused alternative to Google Analytics".
+  </p>
+
+  <p>
+    This solution uses no cookies (so there's no need for annoying full-page
+    pop-ups), and anonymises the small amount of data it does collect. I have no
+    idea who you are unless you <a href="/contact">tell me</a> (which I'd love). If you'd
+    still rather turn it off though, you can do that below.
+  </p>
+
+  <p>
+    Analytics is turned <span class="toggle_state font-bold">on</span> at the moment.
+    <button id="toggle_btn" class="underline decoration-1 hover:decoration-2 decoration-burgundy-500 font-normal hover:font-medium"
+      >Turn it <span class="toggle_antistate">off</span></button
+    >.
+  </p>
+
+  <script>
+    let state:string
+    let toggleBtn = document.getElementById("toggle_btn");
+    let toggleIndicators = document.querySelectorAll(".toggle_state");
+    let toggleActionEls = document.querySelectorAll(".toggle_antistate");
+
+    function updateState() {
+      let currentState = localStorage.getItem("umami.disabled");
+
+      if (currentState == "1") {
+        // if this is here, umami can't send analytics
+        toggleIndicators.forEach((i) => (i.innerHTML = "off"));
+        toggleActionEls.forEach((i) => (i.innerHTML = "on"));
+        state = "1";
+      } else {
+        // if 0 or null, umami can send data (assuming it loads ok)
+        toggleIndicators.forEach((i) => (i.innerHTML = "on"));
+        toggleActionEls.forEach((i) => (i.innerHTML = "off"));
+        state = "0";
+      }
+    }
+
+    function doToggle() {
+      let newval = state == "0" ? "1" : "0";
+      localStorage.setItem("umami.disabled", newval);
+      state = newval;
+      updateState();
+      return false;
+    }
+
+    toggleBtn?.addEventListener("click", () => doToggle());
+    updateState();
+  </script>
+</Page>

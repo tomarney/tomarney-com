@@ -1,0 +1,90 @@
+---
+import FormattedDate from "../components/FormattedDate.astro";
+import Page from "./Page.astro";
+import { SITE_TITLE } from "../consts";
+
+const {
+  title,
+  publishedDate,
+  status,
+  publication,
+  doi,
+  type,
+  authorString,
+  bib,
+} = Astro.props;
+---
+
+<Page title={`${title} – ${SITE_TITLE}`}>
+  <main>
+    <article class="prose-h1:text-xl md:prose-h1:text-2xl prose-h1:leading-relaxed prose-h2:text-xl prose-h3:text-lg">
+
+      <p class="text-lg text-stone-400 font-thin -mt-6">{type}</p>
+
+      <h1 class="mb-4">{title}</h1>
+
+      <p class="text-stone-600">{authorString}</p>
+
+      <div class="text-stone-500 text-sm">
+        <p>
+          {
+            status == "Accepted" && (
+              <>
+                Accepted for publication in <i>{publication}</i>
+              </>
+            )
+          }
+          {
+            status == "In press" && (
+              <>
+                In press at <i>{publication}</i>
+              </>
+            )
+          }
+          {
+            status == "Published" && type == "Article" && (
+              <>
+                <i class="font-semibold pr-2">{publication}</i>
+                {bib?.volume && ` vol. ${bib.volume} `}
+                {bib?.issue && ` no. ${bib.issue} `}
+                (<FormattedDate date={publishedDate} day={false} />)
+                {bib?.pages && ` pp. ${bib.pages} `}
+                {doi && (
+                  <span class="pl-2">
+                    DOI:<a class="not-prose" href={"https://doi.org/" + doi}>
+                      {doi}
+                    </a>
+                  </span>
+                )}
+              </>
+            )
+          }
+          {
+            status == "Published" && type == "Talk" && (
+              <>
+                {publication}
+                (<FormattedDate date={publishedDate} />)
+                {doi && (
+                  <span class="pl-2">
+                    DOI:<a class="not-prose" href={"https://doi.org/" + doi}>
+                      {doi}
+                    </a>
+                  </span>
+                )}
+              </>
+            )
+          }
+        </p>
+        {
+          status == "Published" && doi && (
+            <p>
+              <a href={"https://doi.org/" + doi}>View at publisher</a>
+            </p>
+          )
+        }
+      </div>
+
+      <slot />
+    </article>
+  </main>
+</Page>

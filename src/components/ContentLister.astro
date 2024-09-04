@@ -2,28 +2,17 @@
 import { Image } from "astro:assets";
 import FormattedDate from "./FormattedDate.astro";
 import { getCollection } from "astro:content";
-import { type ContentCollectionKey } from "astro:content";
 
 interface Props {
-	collectionName: ContentCollectionKey;
 	sortOldToNew?: boolean;
 	tagFilter?: string;
 }
 
-const { collectionName, tagFilter, sortOldToNew = false } = Astro.props;
+const { tagFilter, sortOldToNew = false } = Astro.props;
 
-let entries = (await getCollection(collectionName)).sort(
+let entries = (await getCollection("posts")).sort(
 	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
-
-entries = entries.filter((p) =>   {
-	  // if production, don't return draft posts
-    if (import.meta.env.PROD) {
-      return p.data.draft !== true;
-    } else {
-      return true
-    }
-	})
 
 if (tagFilter) {
 	entries = entries.filter((p) => p.data.tags?.includes(tagFilter) ?? false);
@@ -38,7 +27,7 @@ if (sortOldToNew) {
 		entries.map((entry) => (
 			<li class="mt-20 md:mt-14 group">
 				<a
-					href={`/${collectionName}/${entry.slug}/`}
+					href={`/posts/${entry.slug}/`}
 					class="flex flex-col md:flex-row gap-4 h-full"
 				>
 					<div class="md:max-w-[340px] md:order-2">
@@ -51,18 +40,18 @@ if (sortOldToNew) {
 						)}
 					</div>
 					<div class="md:order-1 grow">
-						<p class="text-lg font-medium text-gray-900 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
+						<p class="text-lg font-medium text-stone-900 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
 							{entry.data.title}
 						</p>
 						{entry.data.subtitle && (
-							<p class="font-normal text-gray-700 mt-4">
+							<p class="font-normal text-stone-700 mt-4">
 								{entry.data.subtitle}
 							</p>
 						)}
-						<p class="font-normal text-gray-600 mt-2">
+						<p class="font-normal text-stone-600 mt-2">
 							{entry.data.description}
 						</p>
-						<p class="m-0 text-gray-600">
+						<p class="m-0 text-stone-600">
 							<FormattedDate date={entry.data.published} />
 						</p>
 					</div>
