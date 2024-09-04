@@ -4,7 +4,6 @@ import BaseHead from "../components/BaseHead.astro";
 import Nav from "../components/Nav.astro";
 import FooterLink from "../components/FooterLink.astro";
 
-const isProd = import.meta.env.PROD;
 const today = new Date();
 const {
   title = Astro.props.frontmatter?.title || SITE_TITLE,
@@ -20,17 +19,17 @@ const {
   </head>
 
   <body class="bg-white">
+
     <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
       <div class="max-w-2xl px-5 print:max-w-none">
+
         <header class="pt-12 pb-4 mb-16 border-b border-burgundy-100">
           <Nav />
         </header>
+
         <div class="prose max-w-2xl prose-stone prose-a:decoration-1 hover:prose-a:decoration-2 prose-a:decoration-burgundy-500 prose-a:font-normal hover:prose-a:font-medium prose-headings:font-normal prose-h1:text-[1.7rem] prose-strong:font-medium lining-nums">
           <slot />
-      
         </div>
-      
-      
       
       </div>
     </div>
@@ -79,11 +78,5 @@ const {
       </div>
     </footer>
 
-    { 
-      isProd && (
-        <script is:inline data-goatcounter="https://tomarney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-      )
-    }
-    
   </body>
 </html>
