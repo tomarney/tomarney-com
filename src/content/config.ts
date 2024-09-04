@@ -20,21 +20,21 @@ const posts = defineCollection({
 
 const publications = defineCollection({
 	// Type-check frontmatter using a schema
-	schema: ({image}) => z.object({
+	schema: () => z.object({
+		type: z.enum(['Article', 'Talk', 'Dissertation']),
+		status: z.enum(['In prep', 'Submitted', 'In review', 'Accepted', 'In press', 'Published']),
+		publishedDate: z.coerce.date(),
 		title: z.string(),
-		authors: z.string(),
-		type: z.string(),
-		publication: z.string().optional(),
+		authorList: z.array(z.string()),
+		authorString: z.string(),
 		description: z.string(),
-		// Transform string to Date object
-		published: z.coerce.date(),
-		updated: z.coerce.date().optional(),
-		isPublished: z.boolean().default(true),
-		draft: z.boolean().default(true),
+		publication: z.string().optional(),
+		bib: z.object({
+			volume: z.coerce.string().optional(),
+			issue: z.coerce.string().optional(),
+			pages: z.coerce.string().optional(),
+		}).optional(),
 		doi: z.string().optional(),
-		heroImage: image().optional(),
-		heroImageAlt: z.string().optional(),
-		heroImageCaption: z.string().optional(),
 		tags: z.array(z.string()).optional(),
 	}),
 });

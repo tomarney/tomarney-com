@@ -1,5 +1,5 @@
 ---
-import BlogPost from '../../layouts/BlogPost.astro';
+import PubPage from '../../layouts/PubPage.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -16,6 +16,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BlogPost {...entry.data}>
+<PubPage {...entry.data}>
 	<Content />
-</BlogPost>
+</PubPage>

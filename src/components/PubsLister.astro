@@ -3,55 +3,58 @@ import FormattedDate from "./FormattedDate.astro";
 import { getCollection } from "astro:content";
 
 interface Props {
-	typeFilter: string;
+  typeFilter: string;
 }
 
 const { typeFilter = "all" } = Astro.props;
 
 let entries = (await getCollection("publications")).sort(
-	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 
-entries = entries.filter((p) => {
-	// if production, don't return draft posts
-	if (import.meta.env.PROD) {
-		return p.data.draft !== true;
-	} else {
-		return true;
-	}
-});
-
 if (typeFilter !== "all") {
-	entries = entries.filter((p) => p.data.type == typeFilter);
+  entries = entries.filter((p) => p.data.type == typeFilter);
 }
 ---
 
-<ul class="not-prose list-none">
-	{
-		entries.map((entry) => (
-			<li class="mt-20 md:mt-14 group">
-				<a
-					href={`/publications/${entry.slug}/`}
-				>
-					<p class="text-lg font-medium text-gray-900 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
-						{entry.data.title}
+<ul class="not-prose list-none space-y-14 md:space-y-10 py-4">
+  {
+    entries.map((entry) => (
+      <li class="group bg-stone-50/50 -my-4 py-4 -mx-3 px-3 border border-stone-100 hover:border-stone-200">
+        <a href={`/publications/${entry.slug}/`}>
+          <p class="text-lg font-medium text-stone-900 group-hover:underline group-hover:decoration-burgundy-500 group-hover:decoration-2">
+            {entry.data.title}
+          </p>
+
+          <p class="font-normal text-stone-600 mt-1">
+            {entry.data.authorList.map((author, idx, arr) => {
+              let j = idx < arr.length - 1 ? ", " : "";
+              if (author === "me") {
+                return (<> <strong>T Arney</strong> {j}</>);
+              } else {
+                return <fragment set:text={author + j} />;
+              }
+            })}
+          </p>
+
+					<p class="font-normal text-stone-600 mt-2">
+						{["Published", "In press", "Accepted"].includes(entry.data.status) &&
+							entry.data.publication && (
+									entry.data.publication
+						)}
+
+						{entry.data.status != "Published" && (
+							<span>({entry.data.status})</span>
+						)}
 					</p>
 
-					<p class="font-normal text-gray-600 mt-1">
-						{entry.data.authors}
-					</p>
-					{entry.data.publication && (
-						<p class="font-normal text-gray-600 mt-2">
-							{entry.data.publication}
-						</p>
-					)}
-					{entry.data.isPublished && (
-						<p class="m-0 text-gray-600">
-							<FormattedDate date={entry.data.published} />
-						</p>
-					)}
-				</a>
-			</li>
-		))
-	}
+          {entry.data.status == "Published" && (
+            <p class="m-0 text-stone-600">
+              <FormattedDate date={entry.data.publishedDate} />
+            </p>
+          )}
+        </a>
+      </li>
+    ))
+  }
 </ul>

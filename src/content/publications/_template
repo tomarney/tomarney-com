@@ -1,0 +1,19 @@
+---
+type: Article
+status: Submitted
+publishedDate: 2025-01-01
+title: Title
+authorList: ['me', 'author2']
+authorString: Thomas Arney, Author 2
+description: Description of the paper
+# publication: 
+# doi: 
+tags: ['WAIS', 'Antarctica']
+---
+
+
+import Abstract from '../../components/Abstract.astro';
+
+<Abstract>
+
+</Abstract>
