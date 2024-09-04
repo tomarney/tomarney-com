@@ -27,7 +27,7 @@ British Antarctic Survey
 2020\
 National Oceanography Centre, University of Southampton
 
-“*[QPID](/publications/qpid-palaeo-ocean-remineralisation): A new palaeoclimate database, and an exploration of ocean remineralisation depth*” with [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy)\
+“*QPID: A new palaeoclimate database, and an exploration of ocean remineralisation depth*” with [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy)\
 Dean’s List award; UoS Palynology Student Award
 
 ### BSc (Hons), Geology
@@ -35,7 +35,7 @@ Dean’s List award; UoS Palynology Student Award
 2014\
 Van Mildert College, University of Durham
 
-[Dissertation](/publications/geology-of-berwick-upon-tweed): “*The geology of Berwick-upon-Tweed and Scremerston, Northumberland*” with Jonathan Imber\
+Dissertation: “*The geology of Berwick-upon-Tweed and Scremerston, Northumberland*” with Jonathan Imber\
 BP award for best undergraduate poster
 
 ## Previous experience
