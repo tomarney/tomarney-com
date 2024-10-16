@@ -1,24 +1,57 @@
 ---
 type: Article
-status: Accepted
-publishedDate: 2025-01-01
-title: 'Antarctic ice shelf meltwater outflows in satellite radar imagery: ground-truthing and basal channel observations'
+status: Published
+publishedDate: 2024-10-14
+title: 'Antarctic ice-shelf meltwater outflows in satellite radar imagery: ground-truthing and basal channel observations'
 authorList: ['J S Hamann', 'me', 'J D Kirkham', 'P Wachter', 'K Gohl']
 authorString: 'Jakob S. Hamann, Thomas Arney, James D. Kirkham, Paul Wachter, and Karsten Gohl'
 description: 'We use Synthetic Aperture Radar satellite imagery to investigate meltwater presence along the Antarctic coastline, a possible method for monitoring ice shelf melting, capable of all-weather, day-and-night imaging.'
 publication: Journal of Glaciology
 # bib: 
-#   volume: 
-#   issue: 
-#   pages: 
-# doi: 
+  # volume:  
+  # issue: 
+  # pages: 1-13
+doi: 10.1017/jog.2024.71
 tags: ['Antarctica', 'WAIS', 'EAIS', 'Ice volume', 'Sea level rise', 'SAR', 'Remote sensing']
 ---
 
+import Figure from '../../components/Figure.astro';
 
 import Abstract from '../../components/Abstract.astro';
 
 <Abstract>
+Ice shelves regulate the flow of the Antarctic ice sheet toward the ocean and its contribution to sea-level rise. Accurately monitoring the basal and surface melting of ice shelves is therefore essential for predicting the ice sheet's response to climatic warming. In this study, we utilize Sentinel-1A synthetic aperture radar satellite imagery combined with shipboard measurements of water temperature and salinity to investigate the presence of surficial meltwater plumes along the Antarctic coastline. Our approach reveals a strong correlation between areas of pronounced low radar backscatter extending from ice shelves and significant decreases in water temperature and salinity, suggesting meltwater-enriched ocean waters. We propose that the low radar backscatter signature of meltwater outflows is caused by stable stratification of the upper water column, driven by density contrasts from buoyant, low-salinity meltwater and surface current shear that reduce Bragg scattering waves. The resulting smooth water surfaces were observed adjacent to the surface expression of deep basal channels, documented in a helicopter survey along part of the Bellingshausen Sea ice edge. We present high-temporal resolution satellite radar as a tool for identifying meltwater release from beneath ice shelves, capable of all-weather, day-and-night imaging.
 </Abstract>
 
-We use Synthetic Aperture Radar satellite imagery to investigate meltwater presence along the Antarctic coastline, a possible method for monitoring ice shelf melting, capable of all-weather, day-and-night imaging.
+While on a [research expedition in 2022](/posts/polar-post/) to East Antarctica, we noticed an unusual dark area in one of the regular satellite radar images we use to monitor sea ice conditions:
+
+import atkaSAR from '../../assets/img/Atka_Bay_SAR.png'
+
+<Figure height="600" src={atkaSAR} alt="A black and white grainy satellite image of the Antarctic coastline. There are labels showing fast ice, open ocean, icebergs, and in the middle is a black patch extending to the top right. Some grey sea ice crosses it in the middle of the image." caption="Satellite radar image of Atka Bay, East Antarctica, from 25 Jan 2022 showing a dark area extending out from the ice shelf (bright white)." credit='Hamann et al. (2024) Fig. 2a' />
+
+Comparing it to measurements taken as the ship passed through the area confirmed the water in the patch was colder and fresher, indicating meltwater from the nearby Ekström Ice Shelf flowing out into Atka Bay.
+
+
+import atkaSARinset from '../../assets/img/Atka_Bay_SAR_inset.png'
+
+<Figure sideCaption height="400" src={atkaSARinset} alt="A black and white grainy satellite image of the Antarctic coastline, zoomed in from the previous image. There is a colourful loop on top of the dark patch in the middle of the image. Where the loop crosses over the dark patch, the colours change." caption="Zoom in on Atka Bay, showing the ship's track with the water temperature and salinity along it. Both values change as the ship crosses the dark patch, showing the presence of colder, fresher water." credit='Hamann et al. (2024) Fig. 2b' />
+
+A second example happened almost exactly a year later on another expedition to West Antarctica, near the George VI Ice Shelf.
+
+That expedition also gave us a clue about the mechanism behind the effect. Some ice shelves have long depressions caused by channelised melting from below. On Venable Ice shelf, they were about a kilometre wide, 30--40 m deep, and stretching from the ice edge nearly 40 km inland.
+
+They also often had glossy patches of water just in front of them, much smoother than the surrounding water. They were offset from the ice edge, so it wasn't just because they were sheltered from the cold winds coming off the ice sheet. 
+
+Since the basal channels they were in front of are formed by meltwater, it's likely that these patches are where that (less dense) meltwater is surfacing. We suspect it's a similar effect that's causing the larger scale dark patches in the radar image.
+
+The way the radar pulses bounce off the sea affects how many get back to the satellite. In a rough sea, they get reflected all over the place, and some make it back. The flat patches of meltwater act like a mirror, and the pulses all get reflected away in the same direction -- away from the satellite, making a darker image.
+
+
+import synthesis from '../../assets/img/meltwater_synthesis.png'
+
+<Figure sideCaption height="550" src={synthesis} alt="A block diagram showing the mechanism for lower radar backscatter in meltwater plumes." caption="Our proposed mechanism. Radar pulses are reflected differently off rough sea and smooth meltwater plumes." credit='Hamann et al. (2024) Fig. 6' />
+
+
+Being able to monitor melting ice shelves using satellite radar imagery could be extremely useful, since it's unaffected by weather, works whether it's light or not, and (as with all remote sensing), is always-on, covers huge areas, and doesn't require expensive expeditions to remote areas. However, this technique does need more validation with in situ measurements of the water temperature and salinity at more sites to be confident of its effectiveness.
+
+If confirmed as a reliable technique, it could be developed into an unsupervised monitoring system of ice shelf melting, adding data to a vital topic in our warming world.
