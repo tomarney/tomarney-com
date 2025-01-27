@@ -17,5 +17,6 @@ SO14 3ZH
 
 Office: NOCS/164/21\
 Email: [t.arney@soton.ac.uk](mailto:t.arney@soton.ac.uk)\
+Bluesky: [@arneytom.bsky.social](https://bsky.app/profile/tomarney.com)\
 Mastodon: [@tomarney@fediscience.org](https://fediscience.org/@tomarney)\
 Matrix: @tomarney:matrix.org
