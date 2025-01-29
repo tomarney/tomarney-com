@@ -8,10 +8,10 @@ layout: '../layouts/Page.astro'
 
 I am a PhD candidate at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey. I also have previous professional software development experience.
 
-My current research interests are in polar and climate science using tracers in marine sediments. I'm particularly interested in what the provenance of marine sediments can tell us about past climate.
+My current research interests are in polar and climate science using geochemical tracers in marine sediments. I'm particularly interested in what the provenance of marine sediments can tell us about past climate.
 
-I'm also a self-confessed Pythonista: whenever I've come across existing spreadsheet-based or manual processes in my research, I've used or developed tools and code to replace them with rigorous and reproducible code, often involving machine learning algorithms.
-I'm a big fan of the open source ecosystem, and I've contributed to excellent [TACtool](https://github.com/BritishGeologicalSurvey/tactool) and [pyleoclim](https://github.com/LinkedEarth/Pyleoclim_util).
+I'm also a self-confessed Pythonista: whenever I've come across existing spreadsheet-based or manual processes in my research, I've replaced them with rigorous and reproducible code, from [processing mass spectrometer data](https://github.com/tomarney/icpmsprocess) to using machine learning algorithms to [reproducibly cluster](/publications/egu-2024-west-antarctic-laser-lead/) isotopic data.
+I'm a big fan of the open source ecosystem, and I've contributed to the excellent [TACtool](https://github.com/BritishGeologicalSurvey/tactool) and [pyleoclim](https://github.com/LinkedEarth/Pyleoclim_util) projects.
 
 Data visualisation, visual communication, and design are a passion of mine, with a few competitions and prizes to my name. I'm quite nerdy about typography too…
 
