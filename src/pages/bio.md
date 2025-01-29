@@ -32,14 +32,14 @@ British Antarctic Survey
 2020\
 National Oceanography Centre, University of Southampton
 
-“*QPID: A new palaeoclimate database, and an exploration of ocean remineralisation depth*” with [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy)\
+“*QPID: A new palaeoclimate database, and an exploration of ocean remineralisation depth*” with [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy)
 
 ### BSc (Hons), Geology
 
 2014\
 Van Mildert College, University of Durham
 
-Dissertation: “*The geology of Berwick-upon-Tweed and Scremerston, Northumberland*” with Jonathan Imber\
+Dissertation: “*The geology of Berwick-upon-Tweed and Scremerston, Northumberland*” with Jonathan Imber
 
 ## Previous experience
 
