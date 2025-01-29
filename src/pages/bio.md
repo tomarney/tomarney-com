@@ -8,9 +8,14 @@ layout: '../layouts/Page.astro'
 
 I am a PhD candidate at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey. I also have previous professional software development experience.
 
-My current research interests are in polar and climate science using climate proxies in marine sediments. I'm particularly interested in what the provenance of marine sediments can tell us about past climate. I’m also really interested in data visualisation, visual communication, and design.
+My current research interests are in polar and climate science using tracers in marine sediments. I'm particularly interested in what the provenance of marine sediments can tell us about past climate.
 
-When I’m not working, you'll find me outside: running, cycling (road and gravel), trekking, wild swimming, sailing, SUP, kayaking, or climbing.
+I'm also a self-confessed Pythonista: whenever I've come across existing spreadsheet-based or manual processes in my research, I've used or developed tools and code to replace them with rigorous and reproducible code, often involving machine learning algorithms.
+I'm a big fan of the open source ecosystem, and I've contributed to excellent [TACtool](https://github.com/BritishGeologicalSurvey/tactool) and [pyleoclim](https://github.com/LinkedEarth/Pyleoclim_util).
+
+Data visualisation, visual communication, and design are a passion of mine, with a few competitions and prizes to my name. I'm quite nerdy about typography too…
+
+When I’m not working, you'll find me being a dad, outside, or both: running, cycling (road and gravel), trekking, wild swimming, sailing, SUP, kayaking, or climbing.
 
 ## Education
 
@@ -20,7 +25,7 @@ When I’m not working, you'll find me outside: running, cycling (road and grave
 National Oceanography Centre, University of Southampton\
 British Antarctic Survey
 
-[Project](/posts/my-phd-project): “*Plio-Pleistocene palaeoclimate on the West Antarctic margin*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/), and [Paul Wilson](https://www.southampton.ac.uk/people/5wync6)
+[Project](/posts/my-phd-project): “*West Antarctica in warmer and warming worlds: insights from ice-rafted debris*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/)[Paul Wilson](https://www.southampton.ac.uk/people/5wync6), and [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy).
 
 ### MSc, Oceanography
 
@@ -39,6 +44,14 @@ Dissertation: “*The geology of Berwick-upon-Tweed and Scremerston, Northumberl
 BP award for best undergraduate poster
 
 ## Previous experience
+
+### Ordnance Survey
+
+2023\
+Data scientist (placement)\
+Automated Feature Extraction R&D team
+
+Developed a new deep learning model using semantic image segmentation to turn aerial imagery into maps, using Python packages keras, sci-kit learn, and geopandas.
 
 ### Avast Software
 
