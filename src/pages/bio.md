@@ -25,7 +25,7 @@ When I’m not working, you'll find me being a dad, outside, or both: running, c
 National Oceanography Centre, University of Southampton\
 British Antarctic Survey
 
-[Project](/posts/my-phd-project): “*West Antarctica in warmer and warming worlds: insights from ice-rafted debris*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/)[Paul Wilson](https://www.southampton.ac.uk/people/5wync6), and [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy).
+[Project](/posts/my-phd-project): “*West Antarctica in warmer and warming worlds: insights from ice-rafted debris*” with [Steve Bohaty](https://www.geow.uni-heidelberg.de/forschungsgruppen/bohaty/), [Claus-Dieter Hillenbrand](https://www.bas.ac.uk/profile/hilc/), [Paul Wilson](https://www.southampton.ac.uk/people/5wync6), and [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy).
 
 ### MSc, Oceanography
 
@@ -33,7 +33,6 @@ British Antarctic Survey
 National Oceanography Centre, University of Southampton
 
 “*QPID: A new palaeoclimate database, and an exploration of ocean remineralisation depth*” with [Gavin Foster](https://www.southampton.ac.uk/people/5x7bvy)\
-Dean’s List award; UoS Palynology Student Award
 
 ### BSc (Hons), Geology
 
@@ -41,7 +40,6 @@ Dean’s List award; UoS Palynology Student Award
 Van Mildert College, University of Durham
 
 Dissertation: “*The geology of Berwick-upon-Tweed and Scremerston, Northumberland*” with Jonathan Imber\
-BP award for best undergraduate poster
 
 ## Previous experience
 
@@ -62,6 +60,15 @@ Web developer, responsible for [ccleaner.com](https://www.ccleaner.com).
 
 2015–2016\
 Developer, created and maintained internal tools.
+
+## Awards and Prizes
+
+- IGNITE Doctoral Landscape Award logo competition winner (2024)
+- Poster award, University of Cambridge Institute of Computing for Climate Science "Bayesian Machine Learning as a tool for Climate Scientists" Workshop (2024)
+- Poster award runner-up, British Antarctic Survey Student Symposium (2021)
+- Dean's List award (sustained level of academic excellence, MSc Oceanography) (2020)
+- Palynology Student Award (best coursework in "Microfossils, Environments and Time" module, MSc Oceanography) (2020)
+- BP award for best undergraduate poster, Durham University Earth Sciences Conference (2014)
 
 ---
 
