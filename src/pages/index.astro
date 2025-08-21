@@ -10,7 +10,7 @@ import PS128 from "../assets/img/arney-deck-monkey_llj.jpg";
 import tenby from "../assets/img/arney-tenby-2022_md.jpg";
 
 const descr =
-    "Tom Arney is a palaeoclimate PhD student at the National Oceanography Centre, University of Southampton, and the British Antarctic Survey.";
+    "Tom Arney is a geochemist at the National Oceanography Centre, University of Southampton. He uses laser ablation mass spectrometry to measure trace elements in corals, to reconstruct past sea surface temperatures.";
 
 const collabs = [
     "University of Southampton",
@@ -29,14 +29,11 @@ const collabs = [
 <Page title="Tom Arney" description={descr}>
     <Figure src={banner} alt="" />
 
-    <h1>Past climates from sediment provenance</h1>
+    <h1>Laser ablation geochemistry for palaeoclimate</h1>
 
     <p class="mb-2">
-        How did wind, water, and ice move sediment thousands or millions of
-        years ago?
-    </p>
-    <p class="my-2">
-        What does that mean the environment looked like at the time?
+        What can trace amounts of elements and isotopes in organic and inorganic
+        materials tell us about processes and environmental conditions in the past?
     </p>
     <p class="my-2">
         What can that tell us about our present and future climate?
@@ -53,15 +50,29 @@ const collabs = [
         </div>
 
         <div>
-            <p class="my-0">
-                My current focus as a final-year PhD candidate in Southampton is
-                the history of the West Antarctic Ice Sheet. I use the isotopic
-                geochemistry of iceberg-rafted debris to investigate the extent of
-                the ice sheet through the Plio-Pleistocene. If we understand
-                this better, we can better predict how Antarctica will respond
-                to a warmer world, with big implications for global sea level
-                rise.
+            <p class="mb-2">
+                Research Fellow in coral skeletal geochemistry<br/>
+                School of Ocean and Earth Science, University of Southampton
             </p>
+            <p class="mt-4">
+                My current research focuses on optimising the use of laser
+                ablation mass spectrometry methods to measure trace elements
+                in the calcium carbonate skeletons of reef-building corals.
+            </p>
+            <p class="mt-2">
+                The data I collect can be used to reconstruct past sea surface
+                temperatures beyond the instrumental record, providing
+                important context for understanding current and future climate
+                change.
+            </p>
+            { /* 
+            the history of the West Antarctic Ice Sheet. I use the isotopic
+            geochemistry of iceberg-rafted debris to investigate the extent of
+            the ice sheet through the Plio-Pleistocene. If we understand
+            this better, we can better predict how Antarctica will respond
+            to a warmer world, with big implications for global sea level
+            rise. 
+            */ }
             <p class="text-center sm:text-left mb-0">
                 More:
                 <a href="/posts/my-phd-project" class="inline-block">
@@ -73,6 +84,7 @@ const collabs = [
         </div>
     </div>
 
+{/*    
     <div class="mt-28">
         <h2>Collaborations</h2>
 
@@ -87,7 +99,8 @@ const collabs = [
         <div class="flex gap-y-1 gap-x-6 flex-wrap justify-center text-center">
             {collabs.map((i) => <span>{i}</span>)}
         </div>
-    </div>
+    </div> 
+*/}
 
     <div class="flex flex-col gap-8 sm:flex-row mt-28">
         <a href="posts/polar-post" class="sm:order-2 shrink-0">
@@ -102,7 +115,7 @@ const collabs = [
         <div>
             <h2 class="mt-0">Antarctic expedition</h2>
             <p>
-                The highlight of my PhD so far was sailing as a
+                The highlight of my scientific adventures so far was sailing as a
                 micropalaeontologist on a marine geology expedition on the
                 German research icebreaker <i>Polarstern</i>. Read a series of
                 letters I wrote documenting the two months I spent on the East
@@ -134,7 +147,9 @@ const collabs = [
                 (my favourite) on the Jurassic Coast and in Pembrokeshire.
             </p>
             <p>
-                I've also talked about ocean temperature at the Southampton Science and Engineering Festival, where quite a few primary school kids were fascinated with forams!
+                I've also talked about ocean temperature at the Southampton Science and Engineering Festival,
+                and given a talk on my Antarctic research at the [Pint of Science](https://pintofscience.co.uk/event/global-scale) festival in Southampton.
+                {/* https://web.archive.org/web/20250821143056/https://pintofscience.co.uk/event/global-scale */}
             </p>
         </div>
     </div>
