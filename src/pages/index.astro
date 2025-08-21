@@ -27,7 +27,7 @@ const collabs = [
 ---
 
 <Page title="Tom Arney" description={descr}>
-    <Figure src={banner} alt="" />
+    { /* <Figure src={banner} alt="" /> */ }
 
     <h1>Laser ablation geochemistry for palaeoclimate</h1>
 
@@ -50,16 +50,12 @@ const collabs = [
         </div>
 
         <div>
-            <p class="mb-2">
-                Research Fellow in coral skeletal geochemistry<br/>
-                School of Ocean and Earth Science, University of Southampton
-            </p>
-            <p class="mt-4">
+            <p class="mt-0">
                 My current research focuses on optimising the use of laser
                 ablation mass spectrometry methods to measure trace elements
                 in the calcium carbonate skeletons of reef-building corals.
             </p>
-            <p class="mt-2">
+            <p>
                 The data I collect can be used to reconstruct past sea surface
                 temperatures beyond the instrumental record, providing
                 important context for understanding current and future climate
@@ -75,8 +71,8 @@ const collabs = [
             */ }
             <p class="text-center sm:text-left mb-0">
                 More:
-                <a href="/posts/my-phd-project" class="inline-block">
-                    my PhD project
+                <a href="/publications" class="inline-block">
+                    Publications
                 </a>
                 &mdash;
                 <a href="/bio" class="inline-block"> biography (CV)</a>.
@@ -148,17 +144,10 @@ const collabs = [
             </p>
             <p>
                 I've also talked about ocean temperature at the Southampton Science and Engineering Festival,
-                and given a talk on my Antarctic research at the [Pint of Science](https://pintofscience.co.uk/event/global-scale) festival in Southampton.
+                and given a talk on my Antarctic research at the <a href="https://pintofscience.co.uk/event/global-scale">Pint of Science</a> festival in Southampton.
                 {/* https://web.archive.org/web/20250821143056/https://pintofscience.co.uk/event/global-scale */}
             </p>
         </div>
     </div>
-    {
-        /* TODO
-    
-        - Key findings & publications: Briefly mention your most impactful discoveries or publications, with links for further reading.
-        - Media & presentations: List links to your featured articles, podcasts, or presentations
-        - teaching experience or involvement in mentoring students
-        - Contact information: Make it easy for visitors to connect with you via email, social media, or a contact form. */
-    }
+
 </Page>
