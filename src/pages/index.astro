@@ -5,149 +5,144 @@ import Figure from "../components/Figure.astro";
 import { Image } from "astro:assets";
 
 import banner from "../assets/img/core-proxies-banner.jpg";
-import rockies from "../assets/img/rockies-portrait.jpg";
+import osm from "../assets/img/arney-osm26.jpg";
 import PS128 from "../assets/img/arney-deck-monkey_llj.jpg";
 import tenby from "../assets/img/arney-tenby-2022_md.jpg";
 
 const descr =
-    "Tom Arney is a geochemist at the National Oceanography Centre, University of Southampton. He uses laser ablation mass spectrometry to measure trace elements in corals, to reconstruct past sea surface temperatures.";
+  "Tom Arney is a geochemist at the National Oceanography Centre, University of Southampton. He uses laser ablation mass spectrometry to measure trace elements in corals, to reconstruct past sea surface temperatures.";
 
 const collabs = [
-    "University of Southampton",
-    "British Antarctic Survey",
-    "Heidelberg University",
-    "University College Dublin",
-    "Alfred Wegener Institut",
-    "Toyama University",
-    "University of Portsmouth",
-    "Colorado College",
-    "University of Cambridge",
-    "British Ocean Sediment Core Research Facility",
+  "University of Southampton",
+  "British Antarctic Survey",
+  "Heidelberg University",
+  "University College Dublin",
+  "Alfred Wegener Institut",
+  "Toyama University",
+  "University of Portsmouth",
+  "Colorado College",
+  "University of Cambridge",
+  "British Ocean Sediment Core Research Facility",
 ];
 ---
 
 <Page title="Tom Arney" description={descr}>
-    { /* <Figure src={banner} alt="" /> */ }
+  {/* <Figure src={banner} alt="" /> */}
 
-    <h1>Laser ablation geochemistry for palaeoclimate</h1>
+  <h1>High-resolution geochemistry of environmental records</h1>
 
-    <p class="mb-2">
-        What can trace amounts of elements and isotopes in organic and inorganic
-        materials tell us about processes and environmental conditions in the past?
-    </p>
-    <p class="my-2">
-        What can that tell us about our present and future climate?
-    </p>
+  <p class="mb-2">
+    What can trace amounts of elements and isotopes in organic and inorganic
+    materials tell us about processes and environmental conditions?
+  </p>
+  <p class="my-2">
+    What can that tell us about our present environment and future climate?
+  </p>
 
-    <div class="flex flex-col gap-8 sm:flex-row mt-16">
-        <div class="shrink-0">
-            <Image
-                src={rockies}
-                class="not-prose sm:mt-2 mx-auto"
-                height="350"
-                alt="a photo of Tom Arney, with the snow-covered Canadian Rockies mountains in the background"
-            />
-        </div>
-
-        <div>
-            <p class="mt-0">
-                My current research focuses on optimising the use of laser
-                ablation mass spectrometry methods to measure trace elements
-                in the calcium carbonate skeletons of reef-building corals.
-            </p>
-            <p>
-                The data I collect can be used to reconstruct past sea surface
-                temperatures beyond the instrumental record, providing
-                important context for understanding current and future climate
-                change.
-            </p>
-            { /* 
-            the history of the West Antarctic Ice Sheet. I use the isotopic
-            geochemistry of iceberg-rafted debris to investigate the extent of
-            the ice sheet through the Plio-Pleistocene. If we understand
-            this better, we can better predict how Antarctica will respond
-            to a warmer world, with big implications for global sea level
-            rise. 
-            */ }
-            <p class="text-center sm:text-left mb-0">
-                More:
-                <a href="/publications" class="inline-block">
-                    Publications
-                </a>
-                &mdash;
-                <a href="/bio" class="inline-block"> biography (CV)</a>.
-            </p>
-        </div>
+  <div class="flex flex-col gap-8 sm:flex-row mt-16">
+    <div class="shrink-0">
+      <Image
+        src={osm}
+        class="not-prose sm:mt-2 mx-auto"
+        height="450"
+        alt="a photo of Tom Arney presenting a poster at a conference"
+      />
     </div>
 
-{/*    
+    <div>
+      <p class="mt-0">
+        My current research focuses on optimising the use of <b>
+          laser ablation mass spectrometry
+        </b> methods to measure geochemical signals lying in the carbonate shells
+        and skeletons of marine organisms, particularly reef-building <b
+          >corals</b
+        >.
+      </p>
+      <p>
+        These proxies record environmental conditions at the time of growth
+        which can be used to reconstruct changes over time. A particularly
+        relevant signal is sea surface temperatures: with long coral records,
+        these can be traced back beyond the instrumental record, providing
+        important context for understanding current and future climate change.
+      </p>
+    </div>
+  </div>
+  <p>
+    I have also used the geochemical signals preserved in sand grains as a way
+    of tracking the waxing and waning of the <b>West Antarctic Ice Sheet</b>. By
+    fingerprinting particular populations of sand grains and linking them to
+    sources of erosion under the ice sheet using <b>isotope geochemistry</b> and
+    <b>geochronology</b>, marine sediments comprising sand which has been
+    transported offshore by icebergs can be used to understand how the ice sheet
+    has responded to past climate change.
+  </p>
+  {
+    /*    
     <div class="mt-28">
         <h2>Collaborations</h2>
-
-        <p>
-            My PhD project has grown to include collaborators from each of the
-            institutions below. Coordinating meetings and the work of so many
-            disparate people and labs has sometimes been challenging, but
-            working with lots of clever people all over the world is one of the
-            best parts of academia.
-        </p>
 
         <div class="flex gap-y-1 gap-x-6 flex-wrap justify-center text-center">
             {collabs.map((i) => <span>{i}</span>)}
         </div>
     </div> 
-*/}
+*/
+  }
 
-    <div class="flex flex-col gap-8 sm:flex-row mt-28">
-        <a href="posts/polar-post" class="sm:order-2 shrink-0">
-            <Image
-                src={PS128}
-                class="not-prose mx-auto mt-2"
-                height="400"
-                alt="a photo of a man in bright orange waterproofs on the working deck of a ship in sea ice"
-            />
-        </a>
+  <div class="flex flex-col gap-8 sm:flex-row mt-28">
+    <a href="posts/polar-post" class="sm:order-2 shrink-0">
+      <Image
+        src={PS128}
+        class="not-prose mx-auto mt-2"
+        height="400"
+        alt="a photo of a man in bright orange waterproofs on the working deck of a ship in sea ice"
+      />
+    </a>
 
-        <div>
-            <h2 class="mt-0">Antarctic expedition</h2>
-            <p>
-                The highlight of my scientific adventures so far was sailing as a
-                micropalaeontologist on a marine geology expedition on the
-                German research icebreaker <i>Polarstern</i>. Read a series of
-                letters I wrote documenting the two months I spent on the East
-                Antarctic coast <a href="posts/polar-post">here</a>.
-            </p>
-            <p>
-                Photo shows me engaged in the glamorous job of "deck monkey",
-                clearing mud off the deck (though with a nice view).
-            </p>
-        </div>
+    <div>
+      <h2 class="mt-0">Antarctic expedition</h2>
+      <p>
+        The highlight of my scientific adventures so far was sailing as a
+        micropalaeontologist on a marine geology expedition on the German
+        research icebreaker <i>Polarstern</i>. Read a series of letters I wrote
+        documenting the two months I spent on the East Antarctic coast <a
+          href="posts/polar-post">here</a
+        >.
+      </p>
+      <p>
+        Photo shows me engaged in the glamorous job of "deck monkey", clearing
+        mud off the deck (though with a nice view).
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-8 sm:flex-row mt-28">
+    <div class="shrink-0">
+      <Image
+        src={tenby}
+        class="not-prose mx-auto mt-2"
+        height="400"
+        alt="a man in a red hard hat pointing at some rocks, explaining something"
+      />
     </div>
 
-    <div class="flex flex-col gap-8 sm:flex-row mt-28">
-        <div class="shrink-0">
-            <Image
-                src={tenby}
-                class="not-prose mx-auto mt-2"
-                height="400"
-                alt="a man in a red hard hat pointing at some rocks, explaining something"
-            />
-        </div>
-
-        <div>
-            <h2 class="mt-0">Teaching & outreach</h2>
-            <p>
-                I've helped deliver practical sessions covering
-                palaeoceanography, ocean biogeochemistry, geological mapping,
-                statistics, spectral analysis, R and MATLAB, and field courses
-                (my favourite) on the Jurassic Coast and in Pembrokeshire.
-            </p>
-            <p>
-                I've also talked about ocean temperature at the Southampton Science and Engineering Festival,
-                and given a talk on my Antarctic research at the <a href="https://pintofscience.co.uk/event/global-scale">Pint of Science</a> festival in Southampton.
-                {/* https://web.archive.org/web/20250821143056/https://pintofscience.co.uk/event/global-scale */}
-            </p>
-        </div>
+    <div>
+      <h2 class="mt-0">Teaching & outreach</h2>
+      <p>
+        I've helped deliver practical sessions covering palaeoceanography, ocean
+        biogeochemistry, geological mapping, statistics, spectral analysis, R
+        and MATLAB, and field courses (my favourite) on the Jurassic Coast and
+        in Pembrokeshire.
+      </p>
+      <p>
+        I've also talked about ocean temperature at the Southampton Science and
+        Engineering Festival, and given a talk on my Antarctic research at the <a
+          href="https://pintofscience.co.uk/event/global-scale"
+          >Pint of Science</a
+        > festival in Southampton.
+        {
+          /* https://web.archive.org/web/20250821143056/https://pintofscience.co.uk/event/global-scale */
+        }
+      </p>
     </div>
-
+  </div>
 </Page>

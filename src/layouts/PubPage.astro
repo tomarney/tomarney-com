@@ -7,8 +7,9 @@ const {
   title,
   publishedDate,
   status,
-  publication,
+  publicationFull,
   doi,
+  url,
   type,
   authorString,
   bib,
@@ -30,27 +31,29 @@ const {
           {
             status == "Accepted" && (
               <>
-                Accepted for publication in <i>{publication}</i>
+                Accepted for publication in <i>{publicationFull}</i>
               </>
             )
           }
           {
             status == "In press" && (
               <>
-                In press at <i>{publication}</i>
+                In press at <i>{publicationFull}</i>
               </>
             )
           }
           {
-            status == "Published" && type == "Article" && (
+            status == "Published" && (type == "Article" || type == "Thesis") && (
               <>
-                <i class="font-semibold pr-2">{publication}</i>
-                {bib?.volume && ` vol. ${bib.volume} `}
-                {bib?.issue && ` no. ${bib.issue} `}
-                (<FormattedDate date={publishedDate} day={false} />)
-                {bib?.pages && ` pp. ${bib.pages} `}
+                <span class="pr-2">
+                  <i class="font-semibold">{publicationFull}</i>
+                  {bib?.volume && ` vol. ${bib.volume} `}
+                  {bib?.issue && ` no. ${bib.issue} `}
+                  (<FormattedDate date={publishedDate} day={false} />)
+                  {bib?.pages && (/^\d+$/.test(bib.pages) ? ` ${bib.pages} pp. ` : ` pp. ${bib.pages} `)}
+                </span>
                 {doi && (
-                  <span class="pl-2">
+                  <span class="inline-block">
                     DOI:<a class="not-prose" href={"https://doi.org/" + doi}>
                       {doi}
                     </a>
@@ -62,10 +65,10 @@ const {
           {
             status == "Published" && type == "Talk" && (
               <>
-                {publication}
-                (<FormattedDate date={publishedDate} />)
+                {publicationFull}<span class="pr-2"></span>
+                <span class="pr-2">(<FormattedDate date={publishedDate} />)</span>
                 {doi && (
-                  <span class="pl-2">
+                  <span class="inline-block">
                     DOI:<a class="not-prose" href={"https://doi.org/" + doi}>
                       {doi}
                     </a>
@@ -76,9 +79,9 @@ const {
           }
         </p>
         {
-          status == "Published" && doi && (
+          status == "Published" && (doi || url) && (
             <p>
-              <a href={"https://doi.org/" + doi}>View at publisher</a>
+              <a href={doi ? "https://doi.org/" + doi : url}>View at publisher</a>
             </p>
           )
         }

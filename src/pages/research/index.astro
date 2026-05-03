@@ -1,0 +1,37 @@
+---
+import Page from "../../layouts/Page.astro";
+import PubsLister from "../../components/PubsLister.astro";
+---
+
+<Page
+  title="Tom Arney's research"
+  description="A list of my published work and talks I've given at conferences."
+>
+  <main>
+    <h1>Research</h1>
+
+    <p>
+      My research interests center around the use of laser-ablation geochemical
+      techniques to generate high-resolution records of environmental proxies.
+    </p>
+    <p>
+      Applications of these methods include coral skeletal geochemistry as a
+      tool for reconstructing past ocean conditions and sedimentary provenance
+      as a tool for reconstructing past ice sheet dynamics.
+    </p>
+    <p>
+      I'm also interested in developing new ways to analyse and visualise
+      geoscientific data.
+    </p>
+
+    <section>
+      <h2>Publications</h2>
+
+      <PubsLister typeFilter="Article|Thesis" />
+
+      <h2>Talks</h2>
+
+      <PubsLister typeFilter="Talk" />
+    </section>
+  </main>
+</Page>
