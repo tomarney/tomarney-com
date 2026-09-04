@@ -8,7 +8,7 @@ interface Props {
 
 const { typeFilter = "all" } = Astro.props;
 
-let entries = (await getCollection("publications")).sort(
+let entries = (await getCollection("research")).sort(
   (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 

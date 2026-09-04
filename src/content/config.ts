@@ -18,7 +18,7 @@ const posts = defineCollection({
 	}),
 });
 
-const publications = defineCollection({
+const research = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: () => z.object({
 		type: z.enum(['Article', 'Talk', 'Dissertation', 'Software', 'Thesis']),
@@ -41,4 +41,4 @@ const publications = defineCollection({
 	}),
 });
 
-export const collections = { posts, publications };
+export const collections = { posts, research };
