@@ -34,6 +34,7 @@ const research = defineCollection({
 			volume: z.coerce.string().optional(),
 			issue: z.coerce.string().optional(),
 			pages: z.coerce.string().optional(),
+			totalPages: z.coerce.string().optional(),
 		}).optional(),
 		doi: z.string().optional(),
 		url: z.string().optional(),
