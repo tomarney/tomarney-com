@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Tom Arney';
-export const SITE_DESCRIPTION = 'Tom Arney is a marine geology and palaoclimatology PhD candidate at the University of Southampton.';
+export const SITE_DESCRIPTION = 'Tom Arney is a geochemist at the University of Southampton.';
