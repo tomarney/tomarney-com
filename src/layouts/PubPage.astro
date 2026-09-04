@@ -1,10 +1,10 @@
 ---
 import FormattedDate from "../components/FormattedDate.astro";
 import Page from "./Page.astro";
-import { SITE_TITLE } from "../consts";
 
 const {
   title,
+  description,
   publishedDate,
   status,
   publicationFull,
@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 ---
 
-<Page title={`${title} – ${SITE_TITLE}`}>
+<Page title={`${title}`} description={description}>
   <main>
     <article class="prose-h1:text-xl md:prose-h1:text-2xl prose-h1:leading-relaxed prose-h2:text-xl prose-h3:text-lg">
 
@@ -45,10 +45,10 @@ const {
           {
             status == "Published" && (type == "Article" || type == "Thesis") && (
               <>
-                <span class="pr-2">
+                <span class="pr-4">
                   <i class="font-semibold">{publicationFull}</i>
-                  {bib?.volume && ` vol. ${bib.volume} `}
-                  {bib?.issue && ` no. ${bib.issue} `}
+                  {bib?.volume && ` vol. ${bib.volume}`}
+                  {bib?.issue && ` no. ${bib.issue}`}
                   (<FormattedDate date={publishedDate} day={false} />)
                   {bib?.totalPages && ` ${bib.totalPages} pp. `}
                   {bib?.pages && `: ${bib.pages} `}
@@ -67,7 +67,7 @@ const {
             status == "Published" && type == "Talk" && (
               <>
                 {publicationFull}<span class="pr-2"></span>
-                <span class="pr-2">(<FormattedDate date={publishedDate} />)</span>
+                <span class="pr-4">(<FormattedDate date={publishedDate} />)</span>
                 {doi && (
                   <span class="inline-block">
                     DOI:<a class="not-prose" href={"https://doi.org/" + doi}>
