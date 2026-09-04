@@ -50,7 +50,8 @@ const {
                   {bib?.volume && ` vol. ${bib.volume} `}
                   {bib?.issue && ` no. ${bib.issue} `}
                   (<FormattedDate date={publishedDate} day={false} />)
-                  {bib?.pages && (/^\d+$/.test(bib.pages) ? ` ${bib.pages} pp. ` : ` pp. ${bib.pages} `)}
+                  {bib?.totalPages && ` ${bib.totalPages} pp. `}
+                  {bib?.pages && `: ${bib.pages} `}
                 </span>
                 {doi && (
                   <span class="inline-block">
