@@ -29,53 +29,49 @@ const collabs = [
 <Page title="Tom Arney" description={descr}>
   {/* <Figure src={banner} alt="" /> */}
 
-  <h1>High-resolution geochemistry of environmental records</h1>
+  <h1>Microanalytical geochemist</h1>
 
   <p class="mb-2">
-    What can trace amounts of elements and isotopes in organic and inorganic
-    materials tell us about processes and environmental conditions?
-  </p>
-  <p class="my-2">
-    What can that tell us about our present environment and future climate?
+    I use high-resolution geochemical methods to work on problems across
+    geology, palaeoclimate and environmental science.
   </p>
 
-  <div class="flex flex-col gap-8 sm:flex-row mt-16">
+  <div class="flex flex-col gap-8 sm:flex-row mt-8">
     <div class="shrink-0">
       <Image
         src={osm}
         class="not-prose sm:mt-2 mx-auto"
-        height="450"
+        height="350"
         alt="a photo of Tom Arney presenting a poster at a conference"
       />
     </div>
 
-    <div>
+    <div class="md:mt-2">
       <p class="mt-0">
-        My current research focuses on optimising the use of <b>
-          laser ablation mass spectrometry
-        </b> methods to measure geochemical signals lying in the carbonate shells
-        and skeletons of marine organisms, particularly reef-building <b
-          >corals</b
+        Both physical and biological processes alter the chemical or isotopic
+        composition of natural materials, typically in response to the ambient
+        conditions at the time of formation &ndash; such as the high
+        temperatures and pressures <a
+          href="/research/west-antarctic-geology-from-fsp-pb-rb-sr/"
+          >as a feldspar grain crystallises</a
+        >, or the temperature, salinity and pH of sea water <a
+          href="research/ggrip-2026-optimising-laser-methods-for-long-sst-from-corals/"
+          >as a coral grows</a
         >.
       </p>
       <p>
-        These proxies record environmental conditions at the time of growth
-        which can be used to reconstruct changes over time. A particularly
-        relevant signal is sea surface temperatures: with long coral records,
-        these can be traced back beyond the instrumental record, providing
-        important context for understanding current and future climate change.
+        These compositional variations can be used to reconstruct past
+        environmental conditions, or to understand the processes that have
+        shaped the Earth.
       </p>
     </div>
   </div>
   <p>
-    I have also used the geochemical signals preserved in sand grains as a way
-    of tracking the waxing and waning of the <b>West Antarctic Ice Sheet</b>. By
-    fingerprinting particular populations of sand grains and linking them to
-    sources of erosion under the ice sheet using <b>isotope geochemistry</b> and
-    <b>geochronology</b>, marine sediments comprising sand which has been
-    transported offshore by icebergs can be used to understand how the ice sheet
-    has responded to past climate change.
+    Many of these properties are particularly interesting at the micro scale,
+    and laser ablation&ndash;based methods enable analysis at the scale of tens
+    of microns.
   </p>
+
   {
     /*    
     <div class="mt-28">
@@ -88,7 +84,27 @@ const collabs = [
 */
   }
 
-  <div class="flex flex-col gap-8 sm:flex-row mt-28">
+  <h2 class="mt-20">Methods & analytical experience</h2>
+  <p>
+    I primarily use <b>laser-ablation&ndash;based techniques</b> for high-resolution
+    geochemistry, including major and trace element analysis in-situ isotopic systems,
+    and geochronology.
+  </p>
+  <p>
+    I also have experience with scanning electron microscopy, sample preparation
+    for microanalysis, and developing <a
+      href="https://github.com/tomarney/repeated-ratio-regressions-DRS"
+      >software</a
+    > for data processing and <a
+      href="https://github.com/tomarney/coupled-Pb-Rb-Sr-inverse-provenance"
+      >reproducible research</a
+    >.
+  </p>
+  <p>
+    More details on my <a href="/research/#methods">research</a> page.
+  </p>
+
+  <div class="flex flex-col gap-8 sm:flex-row mt-20">
     <a href="posts/polar-post" class="sm:order-2 shrink-0">
       <Image
         src={PS128}
@@ -115,7 +131,7 @@ const collabs = [
     </div>
   </div>
 
-  <div class="flex flex-col gap-8 sm:flex-row mt-28">
+  <div class="flex flex-col gap-8 sm:flex-row mt-20">
     <div class="shrink-0">
       <Image
         src={tenby}
@@ -135,7 +151,9 @@ const collabs = [
       </p>
       <p>
         I've also talked about ocean temperature at the Southampton Science and
-        Engineering Festival, and given a talk on my Antarctic research at the <a
+        Engineering Festival, about corals at the <a
+          href="https://britishsciencefestival.org/">British Science Festival</a
+        >, and given a talk on my Antarctic research at the <a
           href="https://pintofscience.co.uk/event/global-scale"
           >Pint of Science</a
         > festival in Southampton.

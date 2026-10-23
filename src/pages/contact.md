@@ -17,4 +17,4 @@ SO14 3ZH
 
 Office: NOCS/184/04\
 Email: [t.arney@soton.ac.uk](mailto:t.arney@soton.ac.uk)\
-Bluesky: [@arneytom.bsky.social](https://bsky.app/profile/tomarney.com)\
+Bluesky: [@tomarney.com](https://bsky.app/profile/tomarney.com)
